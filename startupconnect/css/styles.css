@@ -13,6 +13,7 @@
   --bs-white: white;
   --bs-primary-rgb: 100, 161, 157;
   --bs-black-rgb: 0, 0, 0;
+  --bs-gray-form: rgba(0, 0, 0, 0.3);
 }
 *,
 *::before,
@@ -368,4 +369,48 @@ h2, .h2 {
 }
 .footer {
   padding: 5rem 0;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #64a19d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #558985;
+}
+
+/* Estilo para el checkbox */
+form #boxempresa {
+  margin-right: 5px;
 }

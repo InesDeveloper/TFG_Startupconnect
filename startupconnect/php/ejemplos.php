@@ -7,6 +7,4 @@ $resultados = $controlador->consulta("SELECT * FROM Usuarios");
 
 var_dump($resultados);
 
-
-
 ?>
