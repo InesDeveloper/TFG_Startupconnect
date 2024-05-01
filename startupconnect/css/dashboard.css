@@ -1,0 +1,132 @@
+/* Estilo para toda la página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sección del menú */
+.menu {
+    background-color: #f0f0f0;
+    width: 20%;
+    padding: 15px;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
+    display: block; /* Mostrar por defecto */
+    position: relative;
+    top: auto;
+    left: auto;
+    z-index: 1;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin-bottom: 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.floating-button {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* Sección de contenido */
+.content {
+    flex-grow: 1;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.content h2 {
+    margin-top: 0;
+}
+
+/* Sección de noticias */
+.news {
+    background-color: #f7f7f7;
+    width: 20%;
+    padding: 15px;
+    box-sizing: border-box;
+    border-left: 1px solid #ccc;
+    display: block; /* Mostrar por defecto */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .content h2 {
+        margin-top: 50px;
+    }
+    
+    .menu {
+        width: 80%;
+        display: none; /* Ocultar por defecto */
+        position: absolute; /* Flotar en la parte superior izquierda */
+        top: 50px;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .menu.show-menu {
+        display: block; /* Mostrar el menú cuando la clase está presente */
+    }
+
+    .floating-button {
+        display: block;
+    }
+
+    .news {
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
+
+
+.articles {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.title {
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+}
+
+.description {
+    margin: 0 0 10px 0;
+}
+
+.author {
+    color: #555;
+    font-style: italic;
+}
