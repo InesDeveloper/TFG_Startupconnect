@@ -52,7 +52,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     }
 
 } else {
-    echo "Por favor, complete todos los campos del formulario.";
+    echo $translations['formulario_completar_campos'];
     echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';
 }
 

@@ -20,7 +20,7 @@ body {
     font-family: Arial, sans-serif;
     background: var(--bs-black); /* Utiliza el color de fondo definido en el CSS */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/imagen1.jpg");
-     color: var(--bs-teal);
+    color: var(--bs-teal);
 }
 
 form {
@@ -36,6 +36,7 @@ form {
 /* Estilos para los inputs */
 input {
     padding: 10px;
+    width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 5px;

@@ -38,10 +38,13 @@ class ControladorBD {
                     return TRUE;                                    // En caso de que no devuelva nada, TRUE para indicar que ha funcionado
                 }
             }
+//            echo $query;
             $this->desconectar();                                   // Desconecto el enlace de la base de datos para liberar recursos
+//            echo "fallo al ejecutar la consulta";
             return FALSE;                                           // Si ha fallado la consulta, devuelvo FALSE
             
         } else {
+//            echo "Fallo de conexión";
             return FALSE;                                           // Si ha fallado la conexión, devuelvo FALSE
         }
     }
