@@ -40,29 +40,36 @@
                     </ul>
                 </aside>
                 <main class="content">
-                    <h2>Listado de proyectos</h2>
+                    <h2>Listado de descartados</h2>
                     <div class="articles">
                 ';
             $controlador = new ControladorBD();
-            $consulta = "
-                SELECT *
-                FROM proyectos p
-                LEFT JOIN descartes d ON p.Identificador = d.fk_Proyecto AND d.fk_Empresa = ".$_SESSION["idEmpresa"]."
-                LEFT JOIN colaboraciones c ON p.Identificador = c.fk_Proyecto AND c.fk_Empresa = ".$_SESSION["idEmpresa"]."
-                WHERE d.fk_Proyecto IS NULL AND c.fk_Proyecto IS NULL
-            ";
+            $consulta = "SELECT * FROM Descartes WHERE fk_Empresa = '".$_SESSION["idEmpresa"]."';";
+
             $resultado = $controlador->consulta($consulta);
     
             foreach ($resultado as $fila) {
-                $consulta2 = "SELECT * FROM Usuarios WHERE Identificador = '".$fila["fk_Usuarios"]."'";
+                $consulta2 = "
+                SELECT 
+                    p.Nombre AS ProyectoNombre, 
+                    p.Descripcion AS ProyectoDescripcion,
+                    u.Nombre AS UsuarioNombre
+                FROM 
+                    Proyectos p
+                INNER JOIN 
+                    Usuarios u 
+                ON 
+                    p.fk_Usuarios = u.Identificador
+                WHERE 
+                    p.Identificador = '".$fila["fk_Proyecto"]."';";
+
                 $resultado2 = $controlador->consulta($consulta2);
-                
                 foreach ($resultado2 as $fila2) {
                     echo "
                     <div class='article'>
-                        <h2 class='title'>".$fila['Nombre']."</h2>
-                        <p class='description'>".$fila['Descripcion']."</p>
-                        <p class='author'>Autor: ".$fila2['Nombre']."</p>
+                        <h2 class='title'>".$fila2['ProyectoNombre']."</h2>
+                        <p class='description'>".$fila2['ProyectoDescripcion']."</p>
+                        <p class='author'>Autor: ".$fila2['UsuarioNombre']."</p>
                     </div>
                 ";
                 }

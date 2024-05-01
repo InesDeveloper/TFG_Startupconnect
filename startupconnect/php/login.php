@@ -27,6 +27,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         
     $resultado = $controlador->consulta($consulta);
     
+    $idLogeado = "";
+    $nombreLogeado = "";
     foreach ($resultado as $fila) {
 //        foreach ($fila as $clave => $valor) {
 //            echo $clave . ": " . $valor . "<br>";
@@ -34,17 +36,23 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 //        echo "<br>";
         
         $pasas = true;
-        $_SESSION["idUsuario"] = $fila['Identificador'];
-        $_SESSION["nombreUsuario"] = $fila['Nombre'];
+        $idLogeado = $fila['Identificador'];
+        $nombreLogeado = $fila['Nombre'];
     }
     
     if($pasas) {
         if($empresa) {
+            $_SESSION["idEmpresa"] = $idLogeado;
+            $_SESSION["nombreEmpresa"] = $nombreLogeado;
+            
             echo $translations['login_cargando_empresa'];
-            echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';
+            echo '<meta http-equiv="Refresh" content="2; url=dashboardEmpresas.php" /> ';
         } else {
+            $_SESSION["idUsuario"] = $idLogeado;
+            $_SESSION["nombreUsuario"] = $nombreLogeado;
+            
             echo $translations['login_cargando_usuario'];
-            echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';
+            echo '<meta http-equiv="Refresh" content="2; url=dashboard.php" /> ';
         }
     } else {
         echo $translations['login_no_usuario'];
