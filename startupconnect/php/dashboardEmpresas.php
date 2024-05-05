@@ -10,6 +10,10 @@
                 const menu = document.getElementById('menu');
                 menu.classList.toggle('show-menu');
             });
+
+            $('#sector').change(function() {
+                this.form.submit();
+            });
         });
     </script>
 </head>
@@ -33,29 +37,61 @@
             echo '
                 <main class="content">
                     <h2>'.$translations['dashboard_titulo'].'</h2>
+                    
+                    <form action="" method="GET">
+                        <label for="sector">'.$translations['dashboard_seleccionar_sector'].'</label>
+                        <select name="sector" id="sector">
+                            <option value="">'.$translations['dashboard_sectores_valor_defecto'].'</option>';
+                            
+                            $controlador = new ControladorBD();
+                            $consulta_sectores = "SELECT * FROM Sector";
+                            $resultado_sectores = $controlador->consulta($consulta_sectores);
+
+                            foreach ($resultado_sectores as $sector) {
+                                $tipo = $sector['Tipo'];
+                                echo '<option value="'.$sector['Tipo'].'"';
+                                if(isset($_GET['sector']) && $_GET['sector'] == $sector['Tipo']) {
+                                    echo ' selected';
+                                }
+                                echo '>'.$translations[$tipo].'</option>';
+                            }
+
+                        echo '
+                        </select>
+                    </form>
+                    
                     <div class="articles">
                 ';
-            $controlador = new ControladorBD();
-            $consulta = "
-                SELECT *
+            
+            $condicion_sector = '';
+            if(isset($_GET['sector']) && !empty($_GET['sector'])) {
+                $condicion_sector = "AND s.Tipo = '" . $_GET['sector'] . "'";
+            }
+
+            $consulta_proyectos = "
+                SELECT p.Identificador as idProyecto, p.fk_Usuarios as idUsuario, p.Nombre as nombre, p.Descripcion as descripcion
                 FROM proyectos p
                 LEFT JOIN descartes d ON p.Identificador = d.fk_Proyecto AND d.fk_Empresa = ".$_SESSION["idEmpresa"]."
                 LEFT JOIN colaboraciones c ON p.Identificador = c.fk_Proyecto AND c.fk_Empresa = ".$_SESSION["idEmpresa"]."
+                LEFT JOIN Sector s ON p.fk_Sector = s.Identificador
                 WHERE d.fk_Proyecto IS NULL AND c.fk_Proyecto IS NULL
+                $condicion_sector
             ";
-            $resultado = $controlador->consulta($consulta);
+            $resultado_proyectos = $controlador->consulta($consulta_proyectos);
     
-            foreach ($resultado as $fila) {
-                $consulta2 = "SELECT * FROM Usuarios WHERE Identificador = '".$fila["fk_Usuarios"]."'";
+            foreach ($resultado_proyectos as $fila) {
+                $consulta2 = "SELECT * FROM Usuarios WHERE Identificador = '".$fila["idUsuario"]."'";
                 $resultado2 = $controlador->consulta($consulta2);
                 
                 foreach ($resultado2 as $fila2) {
                     echo "
-                    <div class='article'>
-                        <h2 class='title'>".$fila['Nombre']."</h2>
-                        <p class='description'>".$fila['Descripcion']."</p>
-                        <p class='author'>Autor: ".$fila2['Nombre']."</p>
-                    </div>
+                    <a href='detallesProyecto.php?idProyecto=".$fila['idProyecto']."'>
+                        <div class='article'>
+                            <h2 class='title'>".$fila['nombre']."</h2>
+                            <p class='description'>".$fila['descripcion']."</p>
+                            <p class='author'>".$translations['proyecto_autor']."".$fila2['Nombre']."</p>
+                        </div>
+                    </a>
                 ";
                 }
             }

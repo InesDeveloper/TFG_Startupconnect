@@ -61,7 +61,7 @@
                     <div class='article'>
                         <h2 class='title'>".$fila2['ProyectoNombre']."</h2>
                         <p class='description'>".$fila2['ProyectoDescripcion']."</p>
-                        <p class='author'>Autor: ".$fila2['UsuarioNombre']."</p>
+                        <p class='author'>".$translations['proyecto_autor']."".$fila2['UsuarioNombre']."</p>
                     </div>
                 ";
                 }

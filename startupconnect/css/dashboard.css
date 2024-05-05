@@ -130,3 +130,20 @@ body {
     color: #555;
     font-style: italic;
 }
+
+.logout-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.logout-button:hover {
+    background-color: #cc4125;
+}
