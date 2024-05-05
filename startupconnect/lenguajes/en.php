@@ -28,5 +28,14 @@ $translations = array(
     "registrar_empresa_exito" => "The company has successfully registered",
     "registrar_usuario_fallo" => "The user could not be registered, please check the data entered and try again",
     "registrar_usuario_exito" => "The user has successfully registered",
+    "dashboard_empresa_sin_login" => "You must log in first",
+    "navigation_menu_proyectos" => "Projects",
+    "navigation_menu_colaboraciones" => "Collaborations",
+    "navigation_menu_descartados" => "Discarded",
+    "navigation_menu_cerrar_sesion" => "Logout",
+    "dashboard_titulo" => "Project list",
+    "seccion_noticias_titulo" => "News",
+    "colaboraciones_titulo" => "List of collaborations",
+    "descartados_titulo" => "List of discarded",
 );
 ?>

@@ -28,5 +28,14 @@ $translations = array(
     "registrar_empresa_exito" => "La empresa se ha registrado con éxito",
     "registrar_usuario_fallo" => "No se ha podido registrar el usuario, compruebe los datos introducidos e inténtelo de nuevo",
     "registrar_usuario_exito" => "El usuario se ha registrado con éxito",
+    "dashboard_empresa_sin_login" => "Debes iniciar sesión primero",
+    "navigation_menu_proyectos" => "Proyectos",
+    "navigation_menu_colaboraciones" => "Colaboraciones",
+    "navigation_menu_descartados" => "Descartados",
+    "navigation_menu_cerrar_sesion" => "Cerrar sesión",
+    "dashboard_titulo" => "Listado de proyectos",
+    "seccion_noticias_titulo" => "Noticias",
+    "colaboraciones_titulo" => "Listado de colaboraciones",
+    "descartados_titulo" => "Listado de descartados",
 );
 ?>

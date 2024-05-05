@@ -1,8 +1,6 @@
 <?php
-    //$enlace = mysqli_connect("localhost", "startupconnect", "startupconnect", "startupconnect");
 
 class ControladorBD {
-
     private $enlace;
 
     private $host;

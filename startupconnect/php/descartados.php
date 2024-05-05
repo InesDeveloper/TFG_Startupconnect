@@ -26,21 +26,13 @@
     
         if(!isset($_SESSION["idEmpresa"]) && 
            !isset($_SESSION["nombreEmpresa"])) {
-            echo "Logeate primero";
+            echo $translations['dashboard_empresa_sin_login'];
             echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';
         } else {
+            include 'menuEmpresa.php';
             echo '
-                <button id="menu-button" class="floating-button">☰</button>
-                <aside class="menu" id="menu">
-                    <ul>
-                        <li><a href="dashboardEmpresas.php">Inicio</a></li>
-                        <li><a href="colaboraciones.php">Colaboraciones</a></li>
-                        <li><a href="descartados.php">Descartados</a></li>
-                        <li><a href="logout.php">Cerrar sesión</a></li>
-                    </ul>
-                </aside>
                 <main class="content">
-                    <h2>Listado de descartados</h2>
+                    <h2>'.$translations['descartados_titulo'].'</h2>
                     <div class="articles">
                 ';
             $controlador = new ControladorBD();
@@ -78,11 +70,8 @@
             echo '
                     </div>
                 </main>
-                <aside class="news">
-                    <h2>Noticias</h2>
-                    <p>Aquí se mostrarán las últimas noticias.</p>
-                </aside>
             ';
+            include 'noticias.php';
         }
     ?>
 </body>
