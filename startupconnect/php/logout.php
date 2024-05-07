@@ -1,4 +1,4 @@
-<?php
+<?php // Borrado de sesion
 session_start();
 
 // Destruir todas las variables de sesión

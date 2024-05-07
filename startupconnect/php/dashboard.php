@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--Usuario -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,7 @@
     
         require_once('../lenguajes/' . $_SESSION['language'] . '.php');
     
-        if(!isset($_SESSION["idUsuario"]) && 
+        if(!isset($_SESSION["idUsuario"]) && // Si existe sesion de usuario para aportar seguridad
            !isset($_SESSION["nombreUsuario"])) {
             echo $translations['dashboard_empresa_sin_login'];
             echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';
@@ -38,55 +38,26 @@
                 <main class="content">
                     <h2>'.$translations['dashboard_titulo'].'</h2>
                     
-                    <form action="" method="GET">
-                        <label for="sector">'.$translations['dashboard_seleccionar_sector'].'</label>
-                        <select name="sector" id="sector">
-                            <option value="">'.$translations['dashboard_sectores_valor_defecto'].'</option>';
-                            
-                            $controlador = new ControladorBD();
-                            $consulta_sectores = "SELECT * FROM Sector";
-                            $resultado_sectores = $controlador->consulta($consulta_sectores);
-
-                            foreach ($resultado_sectores as $sector) {
-                                $tipo = $sector['Tipo'];
-                                echo '<option value="'.$sector['Tipo'].'"';
-                                if(isset($_GET['sector']) && $_GET['sector'] == $sector['Tipo']) {
-                                    echo ' selected';
-                                }
-                                echo '>'.$translations[$tipo].'</option>';
-                            }
-
-                        echo '
-                        </select>
-                    </form>
-                    
                     <div class="articles">
                 ';
-            
-            $condicion_sector = '';
-            if(isset($_GET['sector']) && !empty($_GET['sector'])) {
-                $condicion_sector = "AND s.Tipo = '" . $_GET['sector'] . "'";
-            }
-
+            $controlador = new ControladorBD();
             $consulta_proyectos = "
-                SELECT p.Identificador as idProyecto, p.fk_Usuarios as idUsuario, p.Nombre as nombre, p.Descripcion as descripcion
-                FROM proyectos p
-                LEFT JOIN Sector s ON p.fk_Sector = s.Identificador
-                WHERE p.fk_Usuarios != ".$_SESSION['idUsuario']."
-                $condicion_sector
+                SELECT *
+                FROM proyectos
+                WHERE fk_Usuarios = ".$_SESSION['idUsuario']."
             ";
             $resultado_proyectos = $controlador->consulta($consulta_proyectos);
     
             foreach ($resultado_proyectos as $fila) {
-                $consulta2 = "SELECT * FROM Usuarios WHERE Identificador = '".$fila["idUsuario"]."'";
+                $consulta2 = "SELECT * FROM Usuarios WHERE Identificador = '".$fila["fk_Usuarios"]."'";
                 $resultado2 = $controlador->consulta($consulta2);
                 
                 foreach ($resultado2 as $fila2) {
                     echo "
-                    <a href='detalles.php?idProyecto=".$fila['idProyecto']."'>
+                    <a href='detalles.php?idProyecto=".$fila['Identificador']."'>
                         <div class='article'>
-                            <h2 class='title'>".$fila['nombre']."</h2>
-                            <p class='description'>".$fila['descripcion']."</p>
+                            <h2 class='title'>".$fila['Nombre']."</h2>
+                            <p class='description'>".$fila['Descripcion']."</p>
                             <p class='author'>".$translations['proyecto_autor']."".$fila2['Nombre']."</p>
                         </div>
                     </a>

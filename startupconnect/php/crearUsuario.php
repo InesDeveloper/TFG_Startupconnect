@@ -1,4 +1,4 @@
-<html>
+<html> <!-- Formularios de registro de usuario y empresa -->
     <head>
         <link href="../css/crearUsuario.css" rel="stylesheet" />
         <script>

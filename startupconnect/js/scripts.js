@@ -1,3 +1,4 @@
+// funcion de cambiar idioma
 function changeLanguage(lang) {
     console.log(lang);
     var newLanguage = lang == 'es' ? 'en' : "es";

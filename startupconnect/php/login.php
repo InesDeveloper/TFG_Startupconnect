@@ -40,9 +40,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $nombreLogeado = $fila['Nombre'];
     }
     
-    if($pasas) {
-        if($empresa) {
-            $_SESSION["idEmpresa"] = $idLogeado;
+    if($pasas) {    // Si existe el usuario
+        if($empresa) { // Si soy empresa
+            $_SESSION["idEmpresa"] = $idLogeado; // Almaceno el ID de empresa y el nombre
             $_SESSION["nombreEmpresa"] = $nombreLogeado;
             
             echo $translations['login_cargando_empresa'];

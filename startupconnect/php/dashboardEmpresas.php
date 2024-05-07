@@ -28,7 +28,7 @@
     
         require_once('../lenguajes/' . $_SESSION['language'] . '.php');
     
-        if(!isset($_SESSION["idEmpresa"]) && 
+        if(!isset($_SESSION["idEmpresa"]) && // Si existe sesion de empresa para aportar seguridad
            !isset($_SESSION["nombreEmpresa"])) {
             echo $translations['dashboard_empresa_sin_login'];
             echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';

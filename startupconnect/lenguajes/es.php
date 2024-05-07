@@ -1,4 +1,4 @@
-<?php
+<?php //Diccionario
 $translations = array(
     "index_crear_cuenta" => "Crear cuenta",
     "index_crear_cuenta_empresa" => "Crear cuenta de empresa",
