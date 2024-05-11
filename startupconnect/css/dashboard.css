@@ -1,9 +1,30 @@
 /* Estilo para toda la página */
+
+:root {
+  --bs-teal: #64a19d;
+  --bs-black: black;
+  --bs-white: white;
+  --bs-gray: gray;
+  --bs-gray-dark: black;
+  --bs-gray-100: white;
+  --bs-primary: #64a19d;
+  --bs-light: white;
+  --bs-dark: black;
+  --bs-black: black;
+  --bs-white: white;
+  --bs-primary-rgb: 100, 161, 157;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-gray-form: rgba(0, 0, 0, 0.3);
+}
+
+/******************/
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    height: 100vh;
+    background-color: #a1d6c7; /* Aplicando el color de fondo negro */
+    color: var(--bs-white); /* Texto en blanco */
+    height: 400vh;
 }
 
 .container {
@@ -13,16 +34,29 @@ body {
 
 /* Sección del menú */
 .menu {
-    background-color: #f0f0f0;
+    background-color: #a1d6c7;
+    
     width: 20%;
     padding: 15px;
     box-sizing: border-box;
-    border-right: 1px solid #ccc;
-    display: block; /* Mostrar por defecto */
+    border-right: 1px solid var(--bs-gray);
+    display: block; 
     position: relative;
     top: auto;
     left: auto;
     z-index: 1;
+}
+
+#logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#header-menu {
+    text-align: center;
+    color: var(--bs-black);
+    padding-bottom: 20px;
 }
 
 .menu ul {
@@ -31,12 +65,24 @@ body {
 }
 
 .menu ul li {
+    height: 40px;
+    border-top: 1px solid var(--bs-gray);
+    border-bottom: 1px solid var(--bs-gray);
     margin-bottom: 10px;
+    text-align: center;
+}
+
+.menu ul li:has(button) {
+    border: none;
+}
+
+.menu ul li:hover {
+    background-color: var(--bs-teal); 
 }
 
 .menu ul li a {
     text-decoration: none;
-    color: black;
+    color: var(--bs-dark);
 }
 
 .floating-button {
@@ -47,6 +93,8 @@ body {
     z-index: 1001;
     padding: 10px;
     font-size: 18px;
+    background-color: var(--bs-primary); /* Color de fondo para el botón flotante */
+    color: var(--bs-white); /* Texto en blanco para el botón flotante */
 }
 
 /* Sección de contenido */
@@ -54,19 +102,27 @@ body {
     flex-grow: 1;
     padding: 15px;
     box-sizing: border-box;
+    background-color: #c1f0f7;
+    color: var(--bs-black);
 }
 
 .content h2 {
     margin-top: 0;
 }
 
+.video-detalles iframe {
+    width: 600px;
+    height: 400px;
+}
+
 /* Sección de noticias */
 .news {
-    background-color: #f7f7f7;
+    color: var(--bs-dark);
+    background-color: #e0fff6; /* Fondo claro para las noticias */
+    border-left: 1px solid var(--bs-gray);
     width: 20%;
     padding: 15px;
     box-sizing: border-box;
-    border-left: 1px solid #ccc;
     display: block; /* Mostrar por defecto */
 }
 
@@ -76,7 +132,13 @@ body {
         margin-top: 50px;
     }
     
+    .video-detalles iframe{
+        width: 450px;
+        height: 300px;
+    }
+    
     .menu {
+        border: 1px solid var(--bs-gray);
         width: 80%;
         display: none; /* Ocultar por defecto */
         position: absolute; /* Flotar en la parte superior izquierda */
@@ -102,19 +164,45 @@ body {
     }
 }
 
-
-.articles {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 .article {
-    background-color: white;
+    margin-top: 20px;
+    background-color: #bbe2f8; 
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: start; 
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.info-container {
+    flex: 1;
+    max-width: 50%;
+}
+
+.video-container {
+    flex: 1;
+    max-width: 50%;
+    order: 2;
+    text-align: right;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto; 
+}
+
+@media (max-width: 768px) {
+    .article {
+        flex-direction: column; 
+    }
+
+    .info-container,
+    .video-container {
+        max-width: 100%; 
+    }
 }
 
 .title {
@@ -127,13 +215,13 @@ body {
 }
 
 .author {
-    color: #555;
+    color: var(--bs-gray-dark);
     font-style: italic;
 }
 
 .logout-button {
     background-color: #ff6347;
-    color: white;
+    color: var(--bs-white);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;

@@ -36,8 +36,8 @@
         
             require_once('../lenguajes/' . $_SESSION['language'] . '.php');
         ?>
-        <div>
-            <label for="typeSelect"><?php echo $translations['crear_cuenta_seccionar_tipo']; ?></label>
+        <div id="selectorTipo">
+            <label for="typeSelect"><?php echo $translations['crear_cuenta_seccionar_tipo']; echo "<br><br>"?></label>
             <select id="typeSelect" name="typeSelect">
                 <option value=""><?php echo $translations['crear_cuenta_secciona'];?></option>
                 <option value="usuario"><?php echo $translations['crear_cuenta_secciona_usuario']; ?></option>

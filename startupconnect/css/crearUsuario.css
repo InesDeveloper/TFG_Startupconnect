@@ -23,6 +23,15 @@ body {
     color: var(--bs-teal);
 }
 
+#selectorTipo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    background: var(--bs-gray);
+    width: 100%;
+    border-radius: 10px;
+}
+
 form {
     background: var(--bs-gray); /* Utiliza el color de fondo definido en el CSS */
     padding: 50px;
@@ -45,8 +54,8 @@ input {
 
 /* Estilos para el botón */
 input[type="submit"] {
-    background: var(--bs-primary); /* Utiliza el color de botón definido en el CSS */
-    color: var(--bs-white); /* Utiliza el color de texto definido en el CSS */
+    background: #64a19d; 
+    color: var(--bs-white);
     border: none;
     cursor: pointer;
 }
@@ -64,6 +73,6 @@ p {
 
 /* Estilos para el título */
 h3 {
-    color: var(white; /* Utiliza el color de texto definido en el CSS */
+    color: var(--bs-white); /* Utiliza el color de texto definido en el CSS */
     margin-top: 0;
 }

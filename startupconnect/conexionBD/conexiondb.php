@@ -17,9 +17,9 @@ class ControladorBD {
     }
     
     public function conectar() {
-        $this->link = new mysqli($this->host, $this->usuario, $this->clave, $this->nombre);
+        $this->enlace = new mysqli($this->host, $this->usuario, $this->clave, $this->nombre);
 
-        if ($this->link->connect_errno) {
+        if ($this->enlace->connect_errno) {
             return FALSE;
         }
 
@@ -29,7 +29,7 @@ class ControladorBD {
     public function consulta($query) {
         if($this->conectar()) {
             
-            if (($resultado = $this->link->query($query))) {
+            if (($resultado = $this->enlace->query($query))) {
                 if (is_object($resultado)) {
                     return $this->obtenerResultados($resultado);    // Si la consulta devuelve objetos, obtener el resultado
                 } else {
@@ -61,8 +61,8 @@ class ControladorBD {
     }
     
     public function desconectar() {
-        if (is_resource($this->link)) {
-            return $this->link->close();
+        if (is_resource($this->enlace)) {
+            return $this->enlace->close();
         }
 
         return FALSE;
@@ -73,4 +73,3 @@ class ControladorBD {
     }
 }
 ?>
-

@@ -42,7 +42,12 @@ $translations = array(
     "dashboard_sectores_tecnologia" => "Technology",
     "dashboard_sectores_otros" => "Other",
     "dashboard_sectores_medioambiente" => "Environment",
-    "seccion_noticias_titulo" => "News",
+    "dashboard_sectores_educacion" => "Education",
+    "dashboard_sectores_transporte" => "Transport",
+    "dashboard_sectores_energia" => "Energy",
+    "dashboard_sectores_consumo" => "Consumption",
+    "dashboard_sectores_comunicacion" => "Communication",
+    "seccion_noticias_titulo" => "Inbox",
     "colaboraciones_titulo" => "List of collaborations",
     "descartados_titulo" => "List of discarded",
     "detalles_proyecto_nombre" => "Project name:",
@@ -60,5 +65,8 @@ $translations = array(
     "detalle_proyecto_formulario_descartar" => "Indicate the reason for the discard and click to reject it",
     "proyecto_autor" => "Author: ",
     "proximamente" => "Coming soon...",
+    "formulario_proyecto_titulo" => "New project",
+    "registrar_proyecto_exito" => "The project has successfully registered",
+    "registrar_proyecto_fallo" => "The project could not be registered, please check the data entered and try again",
 );
 ?>

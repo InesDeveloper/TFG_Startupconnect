@@ -42,7 +42,12 @@ $translations = array(
     "dashboard_sectores_tecnologia" => "Tecnología",
     "dashboard_sectores_otros" => "Otros",
     "dashboard_sectores_medioambiente" => "Medioambiente",
-    "seccion_noticias_titulo" => "Noticias",
+    "dashboard_sectores_educacion" => "Educación",
+    "dashboard_sectores_transporte" => "Transporte",
+    "dashboard_sectores_energia" => "Energía",
+    "dashboard_sectores_consumo" => "Consumo",
+    "dashboard_sectores_comunicacion" => "Comunicación",
+    "seccion_noticias_titulo" => "Bandeja de entrada",
     "colaboraciones_titulo" => "Listado de colaboraciones",
     "descartados_titulo" => "Listado de descartados",
     "detalles_proyecto_nombre" => "Nombre del proyecto:",
@@ -60,5 +65,8 @@ $translations = array(
     "detalle_proyecto_formulario_descartar" => "Indique el motivo del descarte y pulse para rechazarlo",
     "proyecto_autor" => "Autor: ",
     "proximamente" => "Próximamente...",
+    "formulario_proyecto_titulo" => "Nuevo proyecto",
+    "registrar_proyecto_exito" => "El proyecto se ha registrado con éxito",
+    "registrar_proyecto_fallo" => "No se ha podido registrar el proyecto, compruebe los datos introducidos e inténtelo de nuevo",
 );
 ?>

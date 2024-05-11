@@ -87,9 +87,16 @@
                     echo "
                     <a href='detallesProyecto.php?idProyecto=".$fila['idProyecto']."'>
                         <div class='article'>
-                            <h2 class='title'>".$fila['nombre']."</h2>
-                            <p class='description'>".$fila['descripcion']."</p>
-                            <p class='author'>".$translations['proyecto_autor']."".$fila2['Nombre']."</p>
+                            <div class='info-container'>
+                                <h2 class='title'>".$fila['nombre']."</h2>
+                                <p class='description'>".$fila['descripcion']."</p>
+                                <p class='author'>".$translations['proyecto_autor']."".$fila2['Nombre']."</p>
+                            </div>
+                            <div class='video-container'>
+                                "; 
+                                echo '<iframe width="300" height="200" src="https://www.youtube.com/embed/'.$fila['urlVideo'].'?si=VSObhyrbDxjLJGPy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+                                echo "
+                            </div>
                         </div>
                     </a>
                 ";
@@ -99,7 +106,7 @@
                     </div>
                 </main>
             ';
-            include 'noticias.php';
+            include 'bandejadeEntrada.php';
         }
     ?>
 </body>
