@@ -69,7 +69,7 @@
             }
 
             $consulta_proyectos = "
-                SELECT p.Identificador as idProyecto, p.fk_Usuarios as idUsuario, p.Nombre as nombre, p.Descripcion as descripcion
+                SELECT p.Identificador as idProyecto, p.fk_Usuarios as idUsuario, p.Nombre as nombre, p.Descripcion as descripcion, p.urlVideo as urlVideo
                 FROM proyectos p
                 LEFT JOIN descartes d ON p.Identificador = d.fk_Proyecto AND d.fk_Empresa = ".$_SESSION["idEmpresa"]."
                 LEFT JOIN colaboraciones c ON p.Identificador = c.fk_Proyecto AND c.fk_Empresa = ".$_SESSION["idEmpresa"]."

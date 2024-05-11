@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 11-05-2024 a las 14:45:24
+-- Tiempo de generación: 11-05-2024 a las 17:45:32
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -73,25 +73,26 @@ CREATE TABLE `Empresas` (
   `Direccion` varchar(255) NOT NULL,
   `Telefono` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
-  `Contrasena` varchar(255) NOT NULL
+  `Contrasena` varchar(255) NOT NULL,
+  `imagenPerfil` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `Empresas`
 --
 
-INSERT INTO `Empresas` (`Identificador`, `Nombre`, `CIF`, `Direccion`, `Telefono`, `Email`, `Contrasena`) VALUES
-(1, 'Lanzadera', 'B98335227', 'Edificio Lanzadera, La Marina de, Carrer del Moll de la Duana, s/n, 46024 Valencia', '963568585', 'lanzadera@lanzadera.com', 'lanzadera'),
-(2, 'Wayra', 'B-86230562', 'C. de Valverde, 2, Centro, 28004 Madrid', '913796771', 'wayra@wayra.com', 'wayra'),
-(3, 'Conector Startup Accelerator', 'B66132788', ' Pça. de Pau Vila, 1, Ciutat Vella, 08003 Barcelona', '938 07 47 27', 'Conector_Startup_Accelerator@correo.com', 'conectorstartup'),
-(4, 'Plug and Play Spain', 'B98446487', 'Avinguda del Cardenal Benlloch, 67, El Pla del Real, 46021 València', '902 05 02 16', 'Plug_Play_Spain@correo.com', 'plugplay'),
-(5, 'Bbooster Ventures', 'A97586432', 'Travessia s/n 15 E Base 5, 46024 Valencia', '963 59 11 02', 'Bbooster_Ventures@correo.es', 'Bbooster'),
-(6, 'Startup Valencia', 'G98929110', 'C/ de Joan Verdeguer, 116, Poblats Marítims, 46024 València', '623 38 71 97', 'Startup_Valencia@correo.es', 'startupvalencia'),
-(7, 'Techstars Barcelona', 'B66179862', 'Carrer de Muntaner, 239, 08021 Barcelona', '932902400', 'Techstars_Barcelona@correo.com', 'techstars'),
-(8, 'IE Business School Incubator', 'A63265110', 'Calle de María de Molina, 31, Chamartín, 28006 Madrid', '915 68 96 00', 'Business_School_Incubator@correo.com', 'business'),
-(9, 'SeedRocket', 'G65046872', 'Talent Garden Barcelona, calle Ramon Turró, 169, A, 08005 Barcelona', '93 551 62 84', 'SeedRocket@correo.com', 'SeedRocket'),
-(10, 'Barcelona Activa', 'A58295296', 'C/ de la Llacuna, 162, Sant Martí, 08018 Barcelona', '900 533 175', 'Barcelona_Activa@correo.com', 'barcelonaactiva'),
-(11, 'Málaga TechPark', 'A29429990', 'Parque Tecnológico Campanillas, 29590 Málaga', '951 23 13 00', 'Malaga_TechPark@correo.com', 'techparkmalaga');
+INSERT INTO `Empresas` (`Identificador`, `Nombre`, `CIF`, `Direccion`, `Telefono`, `Email`, `Contrasena`, `imagenPerfil`) VALUES
+(1, 'Lanzadera', 'B98335227', 'Edificio Lanzadera, La Marina de, Carrer del Moll de la Duana, s/n, 46024 Valencia', '963568585', 'lanzadera@lanzadera.com', 'lanzadera', '../assets/img/perfiles/empresa/1.png'),
+(2, 'Wayra', 'B-86230562', 'C. de Valverde, 2, Centro, 28004 Madrid', '913796771', 'wayra@wayra.com', 'wayra', NULL),
+(3, 'Conector Startup Accelerator', 'B66132788', ' Pça. de Pau Vila, 1, Ciutat Vella, 08003 Barcelona', '938 07 47 27', 'Conector_Startup_Accelerator@correo.com', 'conectorstartup', NULL),
+(4, 'Plug and Play Spain', 'B98446487', 'Avinguda del Cardenal Benlloch, 67, El Pla del Real, 46021 València', '902 05 02 16', 'Plug_Play_Spain@correo.com', 'plugplay', NULL),
+(5, 'Bbooster Ventures', 'A97586432', 'Travessia s/n 15 E Base 5, 46024 Valencia', '963 59 11 02', 'Bbooster_Ventures@correo.es', 'Bbooster', NULL),
+(6, 'Startup Valencia', 'G98929110', 'C/ de Joan Verdeguer, 116, Poblats Marítims, 46024 València', '623 38 71 97', 'Startup_Valencia@correo.es', 'startupvalencia', NULL),
+(7, 'Techstars Barcelona', 'B66179862', 'Carrer de Muntaner, 239, 08021 Barcelona', '932902400', 'Techstars_Barcelona@correo.com', 'techstars', NULL),
+(8, 'IE Business School Incubator', 'A63265110', 'Calle de María de Molina, 31, Chamartín, 28006 Madrid', '915 68 96 00', 'Business_School_Incubator@correo.com', 'business', NULL),
+(9, 'SeedRocket', 'G65046872', 'Talent Garden Barcelona, calle Ramon Turró, 169, A, 08005 Barcelona', '93 551 62 84', 'SeedRocket@correo.com', 'SeedRocket', NULL),
+(10, 'Barcelona Activa', 'A58295296', 'C/ de la Llacuna, 162, Sant Martí, 08018 Barcelona', '900 533 175', 'Barcelona_Activa@correo.com', 'barcelonaactiva', NULL),
+(11, 'Málaga TechPark', 'A29429990', 'Parque Tecnológico Campanillas, 29590 Málaga', '951 23 13 00', 'Malaga_TechPark@correo.com', 'techparkmalaga', NULL);
 
 -- --------------------------------------------------------
 
@@ -167,24 +168,25 @@ CREATE TABLE `Usuarios` (
   `Email` varchar(255) NOT NULL,
   `Direccion` varchar(255) NOT NULL,
   `Telefono` varchar(255) NOT NULL,
-  `Contrasena` varchar(255) NOT NULL
+  `Contrasena` varchar(255) NOT NULL,
+  `imagenPerfil` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `Usuarios`
 --
 
-INSERT INTO `Usuarios` (`Identificador`, `Nombre`, `Apellido`, `DNI`, `Email`, `Direccion`, `Telefono`, `Contrasena`) VALUES
-(1, 'UsuarioTest', 'ApellidoTest', '12345678T', 'test@test.com', 'Calle Test 123 Ciudad', '123456789', 'test'),
-(2, 'Ines', 'Sánchez', '81269895Q', 'efreya_sanchez@hotmail.com', 'Calle Falsa 123', '687456312', 'ines'),
-(3, 'Marie ', 'Curie', '24950987N', 'MarieCurie@usuario.com', 'Enrique Granados, 6 28224 Pozuelo de Alarcón, Madrid', '654678888', 'mariecurie'),
-(4, 'Luis', 'Mileto', '96862357L', 'mileto@usuario.com', 'calle mileto 28, Valencia', '611266544', 'mileto'),
-(5, 'Eva', 'Domingo', '06394472N', 'evadomingo@usuario.es', 'calle fin de semana 2, Madrid', '677877978', 'evadomingo'),
-(6, 'Clara', 'López', '56034789D', 'clara@usuario.com', 'Calle Príncipe, 33, 36202 Vigo', '621456789', 'clara'),
-(7, 'Luisa', 'Martin', '28905678P', 'luisa@usuario.com', 'Calle Gran Vía, 45, 28013 Madrid', '612345678', 'luisa'),
-(8, 'Álvaro', 'Torres', '25134960F', 'alvaro@usuario.com', 'Calle San Juan, 22, 03002 Alicante', '677890321', 'Alvaro'),
-(9, 'Lucas', 'Navarro', '49381756K', 'Lucas@usuario.com', 'Avenida de América, 15, 28002 Madrid', '665738294', 'lucas'),
-(10, 'Sara', 'García', '31856247E', 'saragarcia@usuario.com', 'Calle de la Estación, 12, 50004 Zaragoza', '673825098', 'sara');
+INSERT INTO `Usuarios` (`Identificador`, `Nombre`, `Apellido`, `DNI`, `Email`, `Direccion`, `Telefono`, `Contrasena`, `imagenPerfil`) VALUES
+(1, 'UsuarioT', 'ApellidoTest', '12345678T', 'test@test.com', 'Calle Test 123 Ciudad', '123456789', 'test', '../assets/img/perfiles/usuario/1.png'),
+(2, 'Ines', 'Sánchez', '81269895Q', 'efreya_sanchez@hotmail.com', 'Calle Falsa 123', '687456312', 'ines', ''),
+(3, 'Marie ', 'Curie', '24950987N', 'MarieCurie@usuario.com', 'Enrique Granados, 6 28224 Pozuelo de Alarcón, Madrid', '654678888', 'mariecurie', ''),
+(4, 'Luis', 'Mileto', '96862357L', 'mileto@usuario.com', 'calle mileto 28, Valencia', '611266544', 'mileto', ''),
+(5, 'Eva', 'Domingo', '06394472N', 'evadomingo@usuario.es', 'calle fin de semana 2, Madrid', '677877978', 'evadomingo', ''),
+(6, 'Clara', 'López', '56034789D', 'clara@usuario.com', 'Calle Príncipe, 33, 36202 Vigo', '621456789', 'clara', ''),
+(7, 'Luisa', 'Martin', '28905678P', 'luisa@usuario.com', 'Calle Gran Vía, 45, 28013 Madrid', '612345678', 'luisa', ''),
+(8, 'Álvaro', 'Torres', '25134960F', 'alvaro@usuario.com', 'Calle San Juan, 22, 03002 Alicante', '677890321', 'Alvaro', ''),
+(9, 'Lucas', 'Navarro', '49381756K', 'Lucas@usuario.com', 'Avenida de América, 15, 28002 Madrid', '665738294', 'lucas', ''),
+(10, 'Sara', 'García', '31856247E', 'saragarcia@usuario.com', 'Calle de la Estación, 12, 50004 Zaragoza', '673825098', 'sara', '');
 
 --
 -- Índices para tablas volcadas

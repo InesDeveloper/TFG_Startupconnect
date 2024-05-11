@@ -29,6 +29,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     
     $idLogeado = "";
     $nombreLogeado = "";
+    $imagenPerfil = null;
     foreach ($resultado as $fila) {
 //        foreach ($fila as $clave => $valor) {
 //            echo $clave . ": " . $valor . "<br>";
@@ -38,18 +39,21 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $pasas = true;
         $idLogeado = $fila['Identificador'];
         $nombreLogeado = $fila['Nombre'];
+        $imagenPerfil = $fila['imagenPerfil'];
     }
     
     if($pasas) {    // Si existe el usuario
         if($empresa) { // Si soy empresa
             $_SESSION["idEmpresa"] = $idLogeado; // Almaceno el ID de empresa y el nombre
             $_SESSION["nombreEmpresa"] = $nombreLogeado;
+            $_SESSION["imagenPerfil"] = $imagenPerfil;
             
             echo $translations['login_cargando_empresa'];
             echo '<meta http-equiv="Refresh" content="2; url=dashboardEmpresas.php" /> ';
         } else {
             $_SESSION["idUsuario"] = $idLogeado;
             $_SESSION["nombreUsuario"] = $nombreLogeado;
+            $_SESSION["imagenPerfil"] = $imagenPerfil;
             
             echo $translations['login_cargando_usuario'];
             echo '<meta http-equiv="Refresh" content="2; url=dashboard.php" /> ';

@@ -35,7 +35,6 @@ body {
 /* Sección del menú */
 .menu {
     background-color: #a1d6c7;
-    
     width: 20%;
     padding: 15px;
     box-sizing: border-box;
@@ -45,6 +44,13 @@ body {
     top: auto;
     left: auto;
     z-index: 1;
+    text-align: center;
+}
+
+#imagenPerfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
 }
 
 #logo {
