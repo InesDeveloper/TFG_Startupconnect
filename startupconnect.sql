@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 07-05-2024 a las 12:01:28
+-- Tiempo de generación: 11-05-2024 a las 14:45:24
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -81,7 +81,17 @@ CREATE TABLE `Empresas` (
 --
 
 INSERT INTO `Empresas` (`Identificador`, `Nombre`, `CIF`, `Direccion`, `Telefono`, `Email`, `Contrasena`) VALUES
-(1, 'Lanzadera', 'B98335227', 'Edificio Lanzadera, La Marina de, Carrer del Moll de la Duana, s/n, 46024 Valencia', '963568585', 'lanzadera@lanzadera.com', 'lanzadera');
+(1, 'Lanzadera', 'B98335227', 'Edificio Lanzadera, La Marina de, Carrer del Moll de la Duana, s/n, 46024 Valencia', '963568585', 'lanzadera@lanzadera.com', 'lanzadera'),
+(2, 'Wayra', 'B-86230562', 'C. de Valverde, 2, Centro, 28004 Madrid', '913796771', 'wayra@wayra.com', 'wayra'),
+(3, 'Conector Startup Accelerator', 'B66132788', ' Pça. de Pau Vila, 1, Ciutat Vella, 08003 Barcelona', '938 07 47 27', 'Conector_Startup_Accelerator@correo.com', 'conectorstartup'),
+(4, 'Plug and Play Spain', 'B98446487', 'Avinguda del Cardenal Benlloch, 67, El Pla del Real, 46021 València', '902 05 02 16', 'Plug_Play_Spain@correo.com', 'plugplay'),
+(5, 'Bbooster Ventures', 'A97586432', 'Travessia s/n 15 E Base 5, 46024 Valencia', '963 59 11 02', 'Bbooster_Ventures@correo.es', 'Bbooster'),
+(6, 'Startup Valencia', 'G98929110', 'C/ de Joan Verdeguer, 116, Poblats Marítims, 46024 València', '623 38 71 97', 'Startup_Valencia@correo.es', 'startupvalencia'),
+(7, 'Techstars Barcelona', 'B66179862', 'Carrer de Muntaner, 239, 08021 Barcelona', '932902400', 'Techstars_Barcelona@correo.com', 'techstars'),
+(8, 'IE Business School Incubator', 'A63265110', 'Calle de María de Molina, 31, Chamartín, 28006 Madrid', '915 68 96 00', 'Business_School_Incubator@correo.com', 'business'),
+(9, 'SeedRocket', 'G65046872', 'Talent Garden Barcelona, calle Ramon Turró, 169, A, 08005 Barcelona', '93 551 62 84', 'SeedRocket@correo.com', 'SeedRocket'),
+(10, 'Barcelona Activa', 'A58295296', 'C/ de la Llacuna, 162, Sant Martí, 08018 Barcelona', '900 533 175', 'Barcelona_Activa@correo.com', 'barcelonaactiva'),
+(11, 'Málaga TechPark', 'A29429990', 'Parque Tecnológico Campanillas, 29590 Málaga', '951 23 13 00', 'Malaga_TechPark@correo.com', 'techparkmalaga');
 
 -- --------------------------------------------------------
 
@@ -94,6 +104,7 @@ CREATE TABLE `Proyectos` (
   `fk_Usuarios` int(11) NOT NULL,
   `Nombre` varchar(255) NOT NULL,
   `Descripcion` varchar(300) NOT NULL,
+  `urlVideo` varchar(255) NOT NULL,
   `fk_sector` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -101,10 +112,20 @@ CREATE TABLE `Proyectos` (
 -- Volcado de datos para la tabla `Proyectos`
 --
 
-INSERT INTO `Proyectos` (`Identificador`, `fk_Usuarios`, `Nombre`, `Descripcion`, `fk_sector`) VALUES
-(1, 2, 'Growntown Garden', 'Huertos urbanos descripción', 1),
-(2, 2, 'Nueva criptomoneda', 'Criptomoneda que se usará como moneda bla bla bla especulación bla bla bla', 2),
-(3, 1, 'Filtro de agua con nanorobots', 'Filtros de agua inteligentes con robots que eliminan las partículas nocivas.', 4);
+INSERT INTO `Proyectos` (`Identificador`, `fk_Usuarios`, `Nombre`, `Descripcion`, `urlVideo`, `fk_sector`) VALUES
+(1, 2, 'Growntown Garden', 'Fomento de la biodiversidad\r\nAl cultivar plantas y flores en un huerto urbano, se puede crear un hábitat para una variedad de especies de insectos y animales, lo que contribuye a la biodiversidad local.', '', 4),
+(2, 5, 'Criptomoneda QuantumCoin', 'Se basa en una red blockchain avanzada que utiliza un protocolo cuántico resistente a ataques, garantizando una seguridad de última generación contra las amenazas emergentes de la computación cuántica.', '', 2),
+(3, 3, 'Filtro de agua con nanorobots', 'Es un dispositivo altamente avanzado de purificación de agua que utiliza tecnología de nanorobots. Son extremadamente pequeños, diseñados para moverse a través del agua y eliminar contaminantes a nivel molecular.', '', 4),
+(4, 4, 'Fitness Gamificado', 'Combina tecnología de realidad aumentada (AR) con entrenamiento físico para crear una experiencia de ejercicio inmersiva y motivadora.', '', 1),
+(5, 2, 'Rastreo de Huella de Carbono en Tiempo Real', 'Tecnología avanzada para monitorear y gestionar las emisiones de carbono de individuos y empresas. ', '', 4),
+(6, 3, 'Teleconsulta Virtual Interactiva', 'La plataforma permitiría a los pacientes interactuar con médicos y especialistas en un entorno virtual tridimensional, simulando una visita presencial en un consultorio.', '', 1),
+(7, 4, 'Gestión Inteligente del Hogar', 'Solución integral para automatizar y optimizar los sistemas de gestión del hogar a través de dispositivos IoT conectados, utilizando inteligencia artificial para mejorar la eficiencia energética, la seguridad y la comodidad.', '', 2),
+(8, 6, 'Mercado Local en Línea', 'Facilita la compra y venta de productos alimenticios y artesanales directamente de productores locales a consumidores en la misma región, fomentando el comercio local y sostenible.', '', 8),
+(9, 8, 'Aprendizaje Basado en Proyectos Virtuales', 'Conectar a estudiantes de todo el mundo para trabajar juntos en proyectos multidisciplinarios guiados por expertos.', '', 5),
+(10, 9, 'Transporte Compartido para Viajes Largos', 'Facilitar el carpooling o compartir vehículo en rutas largas, haciendo los viajes más económicos y sostenibles.', '', 6),
+(11, 10, 'Optimización de Logística de Última Milla', 'Se utilizan tecnología avanzada para gestionar y optimizar las rutas de entrega, coordinar con varios proveedores de transporte y ofrecer soluciones innovadoras para los desafíos logísticos de la última milla.', '', 6),
+(12, 7, 'Comunicaciones Unificadas ', 'Soluciones integrales de comunicación y colaboración basadas en la nube que integran voz, video, mensajería, conferencias y compartición de archivos, todo en una sola plataforma accesible desde cualquier dispositivo', '', 9),
+(13, 1, 'nombre', 'descripcion', 'g4HLJPSyJq8', 1);
 
 -- --------------------------------------------------------
 
@@ -125,7 +146,12 @@ INSERT INTO `Sector` (`Identificador`, `Tipo`) VALUES
 (1, 'dashboard_sectores_salud'),
 (2, 'dashboard_sectores_tecnologia'),
 (3, 'dashboard_sectores_otros'),
-(4, 'dashboard_sectores_medioambiente');
+(4, 'dashboard_sectores_medioambiente'),
+(5, 'dashboard_sectores_educacion'),
+(6, 'dashboard_sectores_transporte'),
+(7, 'dashboard_sectores_energia'),
+(8, 'dashboard_sectores_consumo'),
+(9, 'dashboard_sectores_comunicacion');
 
 -- --------------------------------------------------------
 
@@ -150,7 +176,15 @@ CREATE TABLE `Usuarios` (
 
 INSERT INTO `Usuarios` (`Identificador`, `Nombre`, `Apellido`, `DNI`, `Email`, `Direccion`, `Telefono`, `Contrasena`) VALUES
 (1, 'UsuarioTest', 'ApellidoTest', '12345678T', 'test@test.com', 'Calle Test 123 Ciudad', '123456789', 'test'),
-(2, 'Ines', 'Sánchez', '81269895Q', 'efreya_sanchez@hotmail.com', 'Calle Falsa 123', '687456312', 'ines');
+(2, 'Ines', 'Sánchez', '81269895Q', 'efreya_sanchez@hotmail.com', 'Calle Falsa 123', '687456312', 'ines'),
+(3, 'Marie ', 'Curie', '24950987N', 'MarieCurie@usuario.com', 'Enrique Granados, 6 28224 Pozuelo de Alarcón, Madrid', '654678888', 'mariecurie'),
+(4, 'Luis', 'Mileto', '96862357L', 'mileto@usuario.com', 'calle mileto 28, Valencia', '611266544', 'mileto'),
+(5, 'Eva', 'Domingo', '06394472N', 'evadomingo@usuario.es', 'calle fin de semana 2, Madrid', '677877978', 'evadomingo'),
+(6, 'Clara', 'López', '56034789D', 'clara@usuario.com', 'Calle Príncipe, 33, 36202 Vigo', '621456789', 'clara'),
+(7, 'Luisa', 'Martin', '28905678P', 'luisa@usuario.com', 'Calle Gran Vía, 45, 28013 Madrid', '612345678', 'luisa'),
+(8, 'Álvaro', 'Torres', '25134960F', 'alvaro@usuario.com', 'Calle San Juan, 22, 03002 Alicante', '677890321', 'Alvaro'),
+(9, 'Lucas', 'Navarro', '49381756K', 'Lucas@usuario.com', 'Avenida de América, 15, 28002 Madrid', '665738294', 'lucas'),
+(10, 'Sara', 'García', '31856247E', 'saragarcia@usuario.com', 'Calle de la Estación, 12, 50004 Zaragoza', '673825098', 'sara');
 
 --
 -- Índices para tablas volcadas
@@ -220,25 +254,25 @@ ALTER TABLE `Descartes`
 -- AUTO_INCREMENT de la tabla `Empresas`
 --
 ALTER TABLE `Empresas`
-  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `Proyectos`
 --
 ALTER TABLE `Proyectos`
-  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `Sector`
 --
 ALTER TABLE `Sector`
-  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `Usuarios`
 --
 ALTER TABLE `Usuarios`
-  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
