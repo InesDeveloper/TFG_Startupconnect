@@ -15,33 +15,38 @@
     <style>
         body {
             height: 120vh;
+            background: white;
         }
         
-    /* Estilos para los formularios */
-    .form-container {
-        padding-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: space-between;
-        padding-bottom: 200px;
-    }
+        .content {
+            background: var(--bs-white); /* Utiliza el color de fondo definido en el CSS */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 50px;
+            margin: auto;
+            margin-top: 50px;
+            width: 80%; /* Ancho ajustado para que sea responsive */
+            max-width: 400px; /* Ancho máximo para evitar que el formulario se extienda demasiado en pantallas grandes */
+            border-radius: 10px;
+        }
+        
 
-    .form-container form {
-        flex: 1;
-        min-width: 45%; /* Ajusta el ancho mínimo de los formularios */
-    }
-
-    /* Estilos para pantallas pequeñas */
-    @media (max-width: 768px) {
-        .form-container {
-            flex-direction: column; /* Cambia a disposición vertical */
+        /* Estilos para los inputs */
+        input {
+            padding: 10px;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
         }
 
-        .form-container form {
-            min-width: 100%; /* Formularios ocupan todo el ancho */
+        /* Estilos para el botón */
+        input[type="submit"] {
+            background: #64a19d; 
+            color: var(--bs-white);
+            border: none;
+            cursor: pointer;
         }
-    }
     </style>
 </head>
 <body>
@@ -72,17 +77,16 @@
         ON p.fk_Usuarios = u.Identificador 
         WHERE c.Identificador = ".$_GET["idColab"];
         
-        
         $resultado = $controlador->consulta($consulta);
         
         echo '<main class="content">';
                 
         foreach ($resultado as $fila) {
-            echo '<h2>Nombre del proyecto</h2><p>';
+            echo '<h2>'.$translations['contactar_proyecto_nombre'].'</h2><p>';
             echo $fila["nombre_proyecto"];
-            echo '</p><h2>Teléfono de contacto</h2><p>';
+            echo '</p><h2>'.$translations['contactar_proyecto_telefono'].'</h2><p>';
             echo $fila["telefono_usuario"];
-            echo '</p><h2>Email:</h2><p>';
+            echo '</p><h2>'.$translations['contactar_proyecto_email'].'</h2><p>';
             echo $fila["email_usuario"];
             echo '</p><br>';
         }
@@ -90,7 +94,7 @@
         echo ' 
             <form action="marcarContacto.php" method="POST">
                 <input type="hidden" name="idColab" value="'.$_GET["idColab"].'">
-                <input type="submit" value="Marcar como contactado">
+                <input type="submit" value="'.$translations['contactar_proyecto_boton'].'">
             </form>
         ';
         

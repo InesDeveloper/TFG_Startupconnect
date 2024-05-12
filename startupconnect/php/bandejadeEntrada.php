@@ -30,11 +30,11 @@ if(isset($_SESSION["idUsuario"]) &&
     
     if (count($resultadoColaboraciones) > 0) {
         foreach ($resultadoColaboraciones as $colaboracion) {
-            echo '<div class="colaboracion">Has aceptado colaborar con el proyecto ' . htmlspecialchars($colaboracion['nombre']) .'. 
-            <a href="contactarProyecto.php?idColab='.$colaboracion["Identificador"].'">Pulsa aqui para ponerte en contacto.</a></div>';
+            echo '<div class="colaboracion">'.$translations['bandeja_entrada_aceptado']. htmlspecialchars($colaboracion['nombre']) .'. 
+            <a href="contactarProyecto.php?idColab='.$colaboracion["Identificador"].'">'.$translations['bandeja_entrada_contacta'].'</a></div>';
         }
     } else {
-        echo '<h4>No hay proyectos recientes.</h4>';
+        echo '<h4>'.$translations['bandeja_entrada_proyectos_vacios'].'</h4>';
     }
     
     echo '</div>

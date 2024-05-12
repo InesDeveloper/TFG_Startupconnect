@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 12-05-2024 a las 10:47:33
+-- Tiempo de generación: 12-05-2024 a las 13:13:55
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -183,15 +183,15 @@ CREATE TABLE `Usuarios` (
 
 INSERT INTO `Usuarios` (`Identificador`, `Nombre`, `Apellido`, `DNI`, `Email`, `Direccion`, `Telefono`, `Contrasena`, `imagenPerfil`) VALUES
 (1, 'UsuarioT', 'ApellidoTest', '12345678T', 'test@test.com', 'Calle Test 123 Ciudad', '123456789', 'test', '../assets/img/perfiles/usuario/1.png'),
-(2, 'Ines', 'Sánchez', '81269895Q', 'efreya_sanchez@hotmail.com', 'Calle Falsa 123', '687456312', 'ines', ''),
-(3, 'Marie ', 'Curie', '24950987N', 'MarieCurie@usuario.com', 'Enrique Granados, 6 28224 Pozuelo de Alarcón, Madrid', '654678888', 'mariecurie', ''),
-(4, 'Luis', 'Mileto', '96862357L', 'mileto@usuario.com', 'calle mileto 28, Valencia', '611266544', 'mileto', ''),
-(5, 'Eva', 'Domingo', '06394472N', 'evadomingo@usuario.es', 'calle fin de semana 2, Madrid', '677877978', 'evadomingo', ''),
-(6, 'Clara', 'López', '56034789D', 'clara@usuario.com', 'Calle Príncipe, 33, 36202 Vigo', '621456789', 'clara', ''),
-(7, 'Luisa', 'Martin', '28905678P', 'luisa@usuario.com', 'Calle Gran Vía, 45, 28013 Madrid', '612345678', 'luisa', ''),
-(8, 'Álvaro', 'Torres', '25134960F', 'alvaro@usuario.com', 'Calle San Juan, 22, 03002 Alicante', '677890321', 'Alvaro', ''),
-(9, 'Lucas', 'Navarro', '49381756K', 'Lucas@usuario.com', 'Avenida de América, 15, 28002 Madrid', '665738294', 'lucas', ''),
-(10, 'Sara', 'García', '31856247E', 'saragarcia@usuario.com', 'Calle de la Estación, 12, 50004 Zaragoza', '673825098', 'sara', '');
+(2, 'Ines', 'Sánchez', '81269895Q', 'efreya_sanchez@hotmail.com', 'Calle Falsa 123', '687456312', 'ines', '../assets/img/perfiles/usuario/2.png'),
+(3, 'Marie ', 'Curie', '24950987N', 'MarieCurie@usuario.com', 'Enrique Granados, 6 28224 Pozuelo de Alarcón, Madrid', '654678888', 'mariecurie', '../assets/img/perfiles/usuario/3.png'),
+(4, 'Luis', 'Mileto', '96862357L', 'mileto@usuario.com', 'calle mileto 28, Valencia', '611266544', 'mileto', '../assets/img/perfiles/usuario/4.png'),
+(5, 'Eva', 'Domingo', '06394472N', 'evadomingo@usuario.es', 'calle fin de semana 2, Madrid', '677877978', 'evadomingo', '../assets/img/perfiles/usuario/5.png'),
+(6, 'Clara', 'López', '56034789D', 'clara@usuario.com', 'Calle Príncipe, 33, 36202 Vigo', '621456789', 'clara', '../assets/img/perfiles/usuario/6.png'),
+(7, 'Luisa', 'Martin', '28905678P', 'luisa@usuario.com', 'Calle Gran Vía, 45, 28013 Madrid', '612345678', 'luisa', NULL),
+(8, 'Álvaro', 'Torres', '25134960F', 'alvaro@usuario.com', 'Calle San Juan, 22, 03002 Alicante', '677890321', 'Alvaro', NULL),
+(9, 'Lucas', 'Navarro', '49381756K', 'Lucas@usuario.com', 'Avenida de América, 15, 28002 Madrid', '665738294', 'lucas', NULL),
+(10, 'Sara', 'García', '31856247E', 'saragarcia@usuario.com', 'Calle de la Estación, 12, 50004 Zaragoza', '673825098', 'sara', NULL);
 
 --
 -- Índices para tablas volcadas

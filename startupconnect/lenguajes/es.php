@@ -98,5 +98,12 @@ $translations = array(
     "dashboard_proyectos_vacios" => "Actualmente no tienes proyectos abiertos",
     "marcar_contactado_exito" => "Colaboración marcada como contactada",
     "marcar_contactado_fallo" => "No se ha podido marcar la colaboración como contactada",
+    "bandeja_entrada_proyectos_vacios" => "No hay proyectos recientes.",
+    "bandeja_entrada_aceptado" => "Has aceptado colabrar con el proyecto ",
+    "bandeja_entrada_contacta" => "Pulsa aquí para ponerte en contacto.",
+    "contactar_proyecto_nombre" => "Nombre del proyecto",
+    "contactar_proyecto_telefono" => "Teléfono de contacto",
+    "contactar_proyecto_email" => "Email",
+    "contactar_proyecto_boton" => "Marcar como contactado",
 );
 ?>
