@@ -71,7 +71,7 @@
                     </div>
                 </main>
             ';
-            include 'noticias.php';
+            include 'bandejadeEntrada.php';
         }
     ?>
 </body>

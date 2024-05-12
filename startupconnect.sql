@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 11-05-2024 a las 17:45:32
+-- Tiempo de generación: 12-05-2024 a las 10:47:33
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -30,15 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `Colaboraciones` (
   `Identificador` int(255) NOT NULL,
   `fk_Proyecto` int(11) NOT NULL,
-  `fk_Empresa` int(11) NOT NULL
+  `fk_Empresa` int(11) NOT NULL,
+  `fechaRegistro` datetime NOT NULL,
+  `contactado` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `Colaboraciones`
 --
 
-INSERT INTO `Colaboraciones` (`Identificador`, `fk_Proyecto`, `fk_Empresa`) VALUES
-(1, 1, 1);
+INSERT INTO `Colaboraciones` (`Identificador`, `fk_Proyecto`, `fk_Empresa`, `fechaRegistro`, `contactado`) VALUES
+(1, 1, 1, '2024-05-02 11:16:59', 1),
+(2, 4, 1, '2024-05-12 10:42:51', 0);
 
 -- --------------------------------------------------------
 
@@ -50,15 +53,17 @@ CREATE TABLE `Descartes` (
   `Identificador` int(255) NOT NULL,
   `fk_Proyecto` int(255) NOT NULL,
   `fk_Empresa` int(255) NOT NULL,
-  `Motivo` varchar(255) NOT NULL
+  `Motivo` varchar(255) NOT NULL,
+  `fechaRegistro` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `Descartes`
 --
 
-INSERT INTO `Descartes` (`Identificador`, `fk_Proyecto`, `fk_Empresa`, `Motivo`) VALUES
-(1, 2, 1, 'Odio las criptomonedas');
+INSERT INTO `Descartes` (`Identificador`, `fk_Proyecto`, `fk_Empresa`, `Motivo`, `fechaRegistro`) VALUES
+(1, 2, 1, 'Odio las criptomonedas', '2024-05-04 11:18:02'),
+(2, 14, 1, 'No me gusta', '2024-05-12 10:45:18');
 
 -- --------------------------------------------------------
 
@@ -126,7 +131,7 @@ INSERT INTO `Proyectos` (`Identificador`, `fk_Usuarios`, `Nombre`, `Descripcion`
 (10, 9, 'Transporte Compartido para Viajes Largos', 'Facilitar el carpooling o compartir vehículo en rutas largas, haciendo los viajes más económicos y sostenibles.', '', 6),
 (11, 10, 'Optimización de Logística de Última Milla', 'Se utilizan tecnología avanzada para gestionar y optimizar las rutas de entrega, coordinar con varios proveedores de transporte y ofrecer soluciones innovadoras para los desafíos logísticos de la última milla.', '', 6),
 (12, 7, 'Comunicaciones Unificadas ', 'Soluciones integrales de comunicación y colaboración basadas en la nube que integran voz, video, mensajería, conferencias y compartición de archivos, todo en una sola plataforma accesible desde cualquier dispositivo', '', 9),
-(13, 1, 'nombre', 'descripcion', 'g4HLJPSyJq8', 1);
+(14, 1, 'Test', 'test', 'https://youtu.be/g4HLJPSyJq8?si=DbCZ9J16nJqJvP-j', 5);
 
 -- --------------------------------------------------------
 
@@ -244,13 +249,13 @@ ALTER TABLE `Usuarios`
 -- AUTO_INCREMENT de la tabla `Colaboraciones`
 --
 ALTER TABLE `Colaboraciones`
-  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `Descartes`
 --
 ALTER TABLE `Descartes`
-  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `Empresas`
@@ -262,7 +267,7 @@ ALTER TABLE `Empresas`
 -- AUTO_INCREMENT de la tabla `Proyectos`
 --
 ALTER TABLE `Proyectos`
-  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `Sector`

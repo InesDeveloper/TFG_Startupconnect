@@ -96,5 +96,7 @@ $translations = array(
     "detalles_borrar_proyecto_exito" => "El proyecto se ha eliminado con éxito",
     "detalles_borrar_proyecto_fallo" => "No se ha podido eliminar el proyecto",
     "dashboard_proyectos_vacios" => "Actualmente no tienes proyectos abiertos",
+    "marcar_contactado_exito" => "Colaboración marcada como contactada",
+    "marcar_contactado_fallo" => "No se ha podido marcar la colaboración como contactada",
 );
 ?>

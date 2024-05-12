@@ -15,10 +15,13 @@
     } else {
     
        if (isset($_POST['idProyecto']) && 
-            isset($_POST['idEmpresa']) &&
-            isset($_POST['motivo'])) {
+        isset($_POST['idEmpresa']) &&
+        isset($_POST['motivo'])) {
+           
             $controlador = new ControladorBD();
-            $consulta = "INSERT INTO Descartes (fk_Proyecto, fk_Empresa, motivo) VALUES ('".$_POST['idProyecto']."', '".$_POST['idEmpresa']."', '".$_POST['motivo']."');";
+            $fechaActual = date('Y-m-d H:i:s');
+           
+            $consulta = "INSERT INTO Descartes (fk_Proyecto, fk_Empresa, motivo, fechaRegistro) VALUES ('".$_POST['idProyecto']."', '".$_POST['idEmpresa']."', '".$_POST['motivo']."', '".$fechaActual."');";
 
             $resultado = $controlador->consulta($consulta);
 

@@ -14,28 +14,22 @@
         echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';
     } else {
     
-        if (isset($_POST['idProyecto']) && 
-        isset($_POST['idEmpresa'])) {
+       if (isset($_POST['idColab'])) {
             $controlador = new ControladorBD();
-            $fechaActual = date('Y-m-d H:i:s');
-
-            $consulta = "INSERT INTO Colaboraciones (fk_Proyecto, fk_Empresa, fechaRegistro, contactado) 
-            VALUES ('".$_POST['idProyecto']."', '".$_POST['idEmpresa']."', '".$fechaActual."', '0');";
+            $consulta = "UPDATE Colaboraciones SET contactado ='1' WHERE Identificador = ".$_POST['idColab'].";";
 
             $resultado = $controlador->consulta($consulta);
-            echo $consulta;
-
 
             if($resultado) {
-                    echo $translations['colaboracion_exito'];
+                    echo $translations['marcar_contactado_exito'];
                     echo '<meta http-equiv="Refresh" content="2; url=dashboardEmpresas.php" /> ';
             } else {
-                    echo $translations['colaboracion_fallo'];
-                    echo '<meta http-equiv="Refresh" content="2; url=detallesProyecto.php?idProyecto='.$_POST['idProyecto'].'" /> ';
+                    echo $translations['marcar_contactado_fallo'];
+                    echo '<meta http-equiv="Refresh" content="2; url=detallesProyecto.php" /> ';
             }
 
         } else {
-            echo '<meta http-equiv="Refresh" content="2; url=datallesProyecto.php?idProyecto='.$_POST['idProyecto'].'" /> ';
+            echo '<meta http-equiv="Refresh" content="2; url=datallesProyecto.php" /> ';
         }
     }
 ?>

@@ -183,6 +183,17 @@ body {
     gap: 20px;
 }
 
+.colaboracion {
+    margin-top: 20px;
+    background-color: #fcf5b5; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: start; 
+    justify-content: space-between;
+}
+
 .info-container {
     flex: 1;
     max-width: 50%;
