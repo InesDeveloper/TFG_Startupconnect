@@ -95,5 +95,6 @@ $translations = array(
     "detalles_borrar_proyecto" => "Delete project",
     "detalles_borrar_proyecto_exito" => "The project has been successfully deleted",
     "detalles_borrar_proyecto_fallo" => "The project could not be deleted",
+    "dashboard_proyectos_vacios" => "You currently have no open projects",
 );
 ?>

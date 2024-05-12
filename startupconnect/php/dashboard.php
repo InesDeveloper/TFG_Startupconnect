@@ -43,30 +43,36 @@
                 WHERE fk_Usuarios = ".$_SESSION['idUsuario']."
             ";
             $resultado_proyectos = $controlador->consulta($consulta_proyectos);
-    
-            foreach ($resultado_proyectos as $fila) {
-                $consulta2 = "SELECT * FROM Usuarios WHERE Identificador = '".$fila["fk_Usuarios"]."'";
-                $resultado2 = $controlador->consulta($consulta2);
-                
-                foreach ($resultado2 as $fila2) {
-                    echo "
-                    <a href='detalles.php?idProyecto=".$fila['Identificador']."'>
-                        <div class='article'>
-                            <div class='info-container'>
-                                <h2 class='title'>".$fila['Nombre']."</h2>
-                                <p class='description'>".$fila['Descripcion']."</p>
-                                <p class='author'>".$translations['proyecto_autor']."".$fila2['Nombre']."</p>
+            
+            if(empty($resultado_proyectos)) {
+                echo $translations['dashboard_proyectos_vacios'];
+            } else {
+                foreach ($resultado_proyectos as $fila) {
+                    $consulta2 = "SELECT * FROM Usuarios WHERE Identificador = '".$fila["fk_Usuarios"]."'";
+                    $resultado2 = $controlador->consulta($consulta2);
+
+                    foreach ($resultado2 as $fila2) {
+                        echo "
+                        <a href='detalles.php?idProyecto=".$fila['Identificador']."'>
+                            <div class='article'>
+                                <div class='info-container'>
+                                    <h2 class='title'>".$fila['Nombre']."</h2>
+                                    <p class='description'>".$fila['Descripcion']."</p>
+                                    <p class='author'>".$translations['proyecto_autor']."".$fila2['Nombre']."</p>
+                                </div>
+                                <div class='video-container'>
+                                    "; 
+                                    echo '<iframe width="300" height="200" src="https://www.youtube.com/embed/'.$fila['urlVideo'].'?si=VSObhyrbDxjLJGPy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+                                    echo "
+                                </div>
                             </div>
-                            <div class='video-container'>
-                                "; 
-                                echo '<iframe width="300" height="200" src="https://www.youtube.com/embed/'.$fila['urlVideo'].'?si=VSObhyrbDxjLJGPy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-                                echo "
-                            </div>
-                        </div>
-                    </a>
-                ";
+                        </a>
+                    ";
+                    }
                 }
             }
+    
+            
             echo '
                     </div>
                 </main>
