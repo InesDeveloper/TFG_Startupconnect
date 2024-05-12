@@ -12,6 +12,36 @@
             });
         });
     </script>
+    <style>
+        
+        form {
+            background: var(--bs-gray); /* Utiliza el color de fondo definido en el CSS */
+            padding: 50px;
+            margin: auto;
+            margin-top: 50px;
+            width: 80%; /* Ancho ajustado para que sea responsive */
+            max-width: 400px; /* Ancho máximo para evitar que el formulario se extienda demasiado en pantallas grandes */
+            border-radius: 10px;
+        }
+
+        /* Estilos para los inputs */
+        input {
+            padding: 10px;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        /* Estilos para el botón */
+        input[type="submit"] {
+            background: #64a19d; 
+            color: var(--bs-white);
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -35,16 +65,16 @@
                     <h2>'.$translations['formulario_proyecto_titulo'].'</h2>
                     
                     <form method="POST" action="insertarProyecto.php">
-                        <label for="nombre">Nombre:</label><br>
+                        <label for="nombre">'.$translations['crear_proyecto_nombre'].'</label><br>
                         <input type="text" id="nombre" name="nombre" maxlength="255" required><br>
 
-                        <label for="descripcion">Descripción:</label><br>
+                        <label for="descripcion">'.$translations['crear_proyecto_descripcion'].'</label><br>
                         <input type="text" id="descripcion" name="descripcion" maxlength="300" required><br>
 
-                        <label for="urlVideo">URL del Video:</label><br>
+                        <label for="urlVideo">'.$translations['crear_proyecto_url_video'].'</label><br>
                         <input type="text" id="urlVideo" name="urlVideo" maxlength="255"><br>
 
-                        <label for="sector">Sector:</label><br>
+                        <label for="sector">'.$translations['crear_proyecto_sector'].'</label><br>
                         <select name="fk_sector" id="sector" required>
                             <option value="" disabled selected>'.$translations['dashboard_sectores_valor_defecto'].'</option>';
                             
@@ -63,7 +93,7 @@
 
                         echo '
                         </select><br>
-                        <input type="submit" value="Enviar">
+                        <input type="submit" value="'.$translations['crear_proyecto_boton'].'">
                     </form>
                 </main>
             ';

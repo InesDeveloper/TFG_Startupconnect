@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="<?php echo $_SESSION['language'];?>">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/dashboard.css">
     <style>
         body {
-            height: 150vh;
+            height: 250vh;
         }
         
         form {
@@ -57,14 +57,14 @@
     
         require_once('../lenguajes/' . $_SESSION['language'] . '.php');
     
-        if(!isset($_SESSION["idUsuario"]) && // Si existe sesion de empresa para aportar seguridad
+        if(!isset($_SESSION["idUsuario"]) && // Si existe sesion de usuario para aportar seguridad
            !isset($_SESSION["nombreUsuario"])) {
             echo $translations['dashboard_empresa_sin_login'];
             echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';
         } else {
             include 'menuUsuario.php';
             echo '<main class="content">
-                    <h2>Datos de usuario</h2>';
+                    <h2>'.$translations['perfil_titulo'].'</h2>';
             
             $controlador = new ControladorBD();
             $consulta = "SELECT * FROM Usuarios WHERE Identificador = ".$_SESSION["idUsuario"].";";
@@ -85,14 +85,30 @@
                     echo '<input type="tel" name="telefono" value="'.$fila["Telefono"].'" required><br><br>';
                 }
             
-            echo "<input type='submit' value='Actualizar perfil'>
+            echo "<input type='submit' value='".$translations['perfil_boton_actualizar_datos']."'>
                 </form>";
             
             echo '
             <form action="subirImagenUsuario.php" method="post" enctype="multipart/form-data">
-                <label for="fileToUpload">Selecciona una imagen PNG para subir:</label>
+                <label for="fileToUpload">'.$translations['perfil_selecciona_imagen'].'</label>
                 <input type="file" name="fileToUpload" id="fileToUpload">
-                <input type="submit" value="Subir Imagen" name="submit">
+                <input type="submit" value="'.$translations['perfil_boton_imagen'].'" name="submit">
+            </form>
+            ';
+            
+            echo '
+            <form action="cambiarContrasena.php" method="post">
+                '.$translations['perfil_nueva_contrasena'].'<br>
+                <input type="password" name="password" required><br>
+                '.$translations['perfil_repetir_contrasena'].'<br>
+                <input type="password" name="repitepassword" required><br>
+                <input type="submit" value="'.$translations['perfil_boton_contrasena'].'">
+            </form>
+            ';
+            
+            echo '
+            <form action="eliminarCuenta.php" method="post">
+                <input type="submit" value="'.$translations['perfil_boton_borrar_cuenta'].'" name="botonBorrar" class="botonBorrar">
             </form>
             ';
      

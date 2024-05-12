@@ -31,10 +31,10 @@ if(!isset($_SESSION["idEmpresa"]) && // Si existe sesion de empresa para aportar
         $resultado = $controlador->consulta($consulta);
 
         if($resultado) {
-                echo $translations['registrar_empresa_exito'];
+                echo $translations['actualizar_exito'];
                 echo '<meta http-equiv="Refresh" content="2; url=perfilEmpresa.php" /> ';
         } else {
-                echo $translations['registrar_empresa_fallo'];
+                echo $translations['actualizar_fallo'];
                 echo '<meta http-equiv="Refresh" content="2; url=perfilEmpresa.php" /> ';
         }
     } else {

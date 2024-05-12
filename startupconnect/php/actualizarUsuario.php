@@ -33,10 +33,10 @@ if(!isset($_SESSION["idUsuario"]) &&
         $resultado = $controlador->consulta($consulta);
 
         if($resultado) {
-                echo $translations['registrar_empresa_exito'];
+                echo $translations['actualizar_exito'];
                 echo '<meta http-equiv="Refresh" content="2; url=perfilUsuario.php" /> ';
         } else {
-                echo $translations['registrar_empresa_fallo'];
+                echo $translations['actualizar_fallo'];
                 echo '<meta http-equiv="Refresh" content="2; url=perfilUsuario.php" /> ';
         }
     } else {

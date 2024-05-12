@@ -62,11 +62,11 @@ if($imageFileType != "png") {
 
 // Verificar si $uploadOk está puesto en 0 por un error
 if ($uploadOk == 0) {
-    echo "Lo siento, tu archivo no fue subido.";
+    echo $translations['subir_imagen_fallo'];
     echo '<meta http-equiv="Refresh" content="2; url=perfilUsuario.php" /> ';
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "El archivo ". htmlspecialchars($userId) . "." . $imageFileType . " ha sido subido.";
+        //echo "El archivo ". htmlspecialchars($userId) . "." . $imageFileType . " ha sido subido.";
         
         $filePath = $target_file; // Ruta de la imagen subida
 
@@ -76,15 +76,15 @@ if ($uploadOk == 0) {
         $resultado = $controlador->consulta($sql);
         
         if($resultado) {
-            echo "La imagen de perfil ha sido actualizada en la base de datos.";
+            echo $translations['subir_imagen_perfil_exito'];
             $_SESSION['imagenPerfil'] = $filePath;
             echo '<meta http-equiv="Refresh" content="2; url=perfilEmpresa.php" /> ';
         } else {
-            echo "Error al actualizar la imagen de perfil en la base de datos.";
+            echo $translations['subir_imagen_perfil_fallo'];
             echo '<meta http-equiv="Refresh" content="2; url=perfilEmpresa.php" /> ';
         }
     } else {
-        echo "Lo siento, hubo un error subiendo tu archivo.";
+        echo $translations['subir_imagen_perfil_subir_error'];
         echo '<meta http-equiv="Refresh" content="2; url=perfilEmpresa.php" /> ';
     }
 }

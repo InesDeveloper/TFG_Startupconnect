@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/dashboard.css">
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <style>
+        form {
+            padding-top: 20px;
+        }
+    </style>
     <script>
         $(document).ready(function() {
             document.getElementById('menu-button').addEventListener('click', function() {
@@ -29,27 +34,46 @@
         echo $translations['dashboard_empresa_sin_login'];
         echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';
     } else if(isset($_GET["idProyecto"])){
-        include 'menuUsuario.php';
         $controlador = new ControladorBD();
-        $consulta = "
-                SELECT *
-                FROM proyectos
-                WHERE Identificador = ".$_GET["idProyecto"]."
-                ";
-        $resultado = $controlador->consulta($consulta);
         
-        echo '<main class="content">';
+        if(isset($_POST["id"])) {
+            $consulta = "DELETE FROM Proyectos WHERE Identificador = ".$_POST["id"];
+            $resultado = $controlador->consulta($consulta);
+            
+            if($resultado) {
+                echo $translations['detalles_borrar_proyecto_exito'];
+                echo '<meta http-equiv="Refresh" content="2; url=dashboard.php" /> ';
+            } else {
+                echo $translations['detalles_borrar_proyecto_fallo'];
+                echo '<meta http-equiv="Refresh" content="2; url=detalles.php?idProyecto='.$_GET["idProyecto"].'" /> ';
+            }
+        } else {
+            include 'menuUsuario.php';
         
-        foreach ($resultado as $fila) {
-            echo '<h2>'.$translations['detalles_proyecto_nombre'].'</h2><p>';
-            echo $fila["Nombre"];
-            echo '</p><h2>'.$translations['detalles_proyecto_descripcion'].'</h2><p>';
-            echo $fila["Descripcion"];
-            echo '</p><br>
-                <div class="video-detalles">
-                    <iframe src="https://www.youtube.com/embed/'.$fila['urlVideo'].'?si=VSObhyrbDxjLJGPy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </main>';
+            $consulta = "
+                    SELECT *
+                    FROM proyectos
+                    WHERE Identificador = ".$_GET["idProyecto"]."
+                    ";
+            $resultado = $controlador->consulta($consulta);
+
+            echo '<main class="content">';
+
+            foreach ($resultado as $fila) {
+                echo '<h2>'.$translations['detalles_proyecto_nombre'].'</h2><p>';
+                echo $fila["Nombre"];
+                echo '</p><h2>'.$translations['detalles_proyecto_descripcion'].'</h2><p>';
+                echo $fila["Descripcion"];
+                echo '</p><br>
+                    <div class="video-detalles">
+                        <iframe src="https://www.youtube.com/embed/'.$fila['urlVideo'].'?si=VSObhyrbDxjLJGPy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <form action="#" method="post">
+                        <input type="hidden" name="id" value="'.$fila['Identificador'].'">
+                        <input type="submit" value="'.$translations['detalles_borrar_proyecto'].'" name="botonBorrar" class="botonBorrar">
+                    </form>
+                </main>';
+            }
         }
         
     } else {
