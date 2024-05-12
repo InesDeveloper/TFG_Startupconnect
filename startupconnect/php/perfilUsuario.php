@@ -8,6 +8,10 @@
             height: 250vh;
         }
         
+        h2 {
+            text-align: center;
+        }
+        
         form {
             background: var(--bs-gray); /* Utiliza el color de fondo definido en el CSS */
             padding: 50px;
@@ -113,7 +117,7 @@
             ';
      
             echo '</main>';
-            include 'bandejadeEntrada.php';
+            //include 'bandejadeEntrada.php';
         }
     ?>
 </body>

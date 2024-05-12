@@ -62,7 +62,7 @@
                                 </div>
                                 <div class='video-container'>
                                     "; 
-                                    echo '<iframe width="300" height="200" src="https://www.youtube.com/embed/'.$fila['urlVideo'].'?si=VSObhyrbDxjLJGPy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+                                    echo '<iframe width="300" height="200" src="'.$fila['urlVideo'].'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
                                     echo "
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                     </div>
                 </main>
             ';
-            include 'bandejadeEntrada.php';
+            //include 'bandejadeEntrada.php';
         }
     ?>
 </body>

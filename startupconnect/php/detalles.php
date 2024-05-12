@@ -66,7 +66,7 @@
                 echo $fila["Descripcion"];
                 echo '</p><br>
                     <div class="video-detalles">
-                        <iframe src="https://www.youtube.com/embed/'.$fila['urlVideo'].'?si=VSObhyrbDxjLJGPy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe width="300" height="200" src="'.$fila['urlVideo'].'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <form action="#" method="post">
                         <input type="hidden" name="id" value="'.$fila['Identificador'].'">

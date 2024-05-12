@@ -97,7 +97,7 @@
                     </form>
                 </main>
             ';
-            include 'bandejadeEntrada.php';
+            //include 'bandejadeEntrada.php';
         }
     ?>
 </body>
