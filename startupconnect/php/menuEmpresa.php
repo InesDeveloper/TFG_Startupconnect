@@ -22,6 +22,7 @@ echo '
                 <li><a href="dashboardEmpresas.php">'.$translations['navigation_menu_proyectos'].'</a></li>
                 <li><a href="colaboraciones.php">'.$translations['navigation_menu_colaboraciones'].'</a></li>
                 <li><a href="descartados.php">'.$translations['navigation_menu_descartados'].'</a></li>
+                <li><a href="contacto.php">'.$translations['navigation_menu_soporte'].'</a></li>
                 <li><button class="logout-button" onclick="location.href=\'logout.php\'">'.$translations['navigation_menu_cerrar_sesion'].'</button></li>
             </ul>
             <img id="logo" src="../assets/img/LogoSConnect.png">

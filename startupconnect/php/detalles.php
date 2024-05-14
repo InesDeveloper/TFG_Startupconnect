@@ -64,9 +64,11 @@
                 echo $fila["Nombre"];
                 echo '</p><h2>'.$translations['detalles_proyecto_descripcion'].'</h2><p>';
                 echo $fila["Descripcion"];
+                $videoId = explode("/", parse_url($fila['urlVideo'], PHP_URL_PATH))[1];
+                $embedUrl = "https://www.youtube.com/embed/" . $videoId;    
                 echo '</p><br>
                     <div class="video-detalles">
-                        <iframe width="300" height="200" src="'.$fila['urlVideo'].'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe width="300" height="200" src="'.$embedUrl.'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <form action="#" method="post">
                         <input type="hidden" name="id" value="'.$fila['Identificador'].'">

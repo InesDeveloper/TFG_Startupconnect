@@ -115,7 +115,6 @@
             ';
      
             echo '</main>';
-            include 'bandejadeEntrada.php';
         }
     ?>
 </body>

@@ -62,7 +62,9 @@
                                 </div>
                                 <div class='video-container'>
                                     "; 
-                                    echo '<iframe width="300" height="200" src="'.$fila['urlVideo'].'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+                                    $videoId = explode("/", parse_url($fila['urlVideo'], PHP_URL_PATH))[1];
+                                    $embedUrl = "https://www.youtube.com/embed/" . $videoId;
+                                    echo '<iframe width="300" height="200" src="'.$embedUrl.'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
                                     echo "
                                 </div>
                             </div>

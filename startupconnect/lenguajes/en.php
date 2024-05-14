@@ -105,5 +105,8 @@ $translations = array(
     "contactar_proyecto_telefono" => "Contact phone",
     "contactar_proyecto_email" => "Email",
     "contactar_proyecto_boton" => "Mark as contacted",
+    "contacto_titulo" => "Help Center",
+    "navigation_menu_soporte" => "Support",
+    "contacto_mensaje" => "Message",
 );
 ?>
