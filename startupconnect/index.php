@@ -57,7 +57,6 @@
                             <?php echo $translations['index_empresa']; ?></label> <br>
                             <input class="btn btn-primary" type="submit" value="<?php echo $translations['index_iniciar_sesion']; ?>">
                         </form>
-                        
                     </div>
                 </div>
             </div>

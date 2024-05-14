@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/dashboard.css">
     <style>
-        body {
-            height: 250vh;
-        }
         
         h2 {
             text-align: center;
         }
         
         form {
-            background: var(--bs-gray); /* Utiliza el color de fondo definido en el CSS */
+            background: var(--bs-gray);
             padding: 50px;
             margin: auto;
             margin-top: 50px;
-            width: 80%; /* Ancho ajustado para que sea responsive */
-            max-width: 400px; /* Ancho máximo para evitar que el formulario se extienda demasiado en pantallas grandes */
+            width: 80%; 
+            max-width: 400px; 
             border-radius: 10px;
         }
 

@@ -22,9 +22,8 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    background-color: #a1d6c7; /* Aplicando el color de fondo negro */
-    color: var(--bs-white); /* Texto en blanco */
-    height: 400vh;
+    background-image: linear-gradient(to bottom, #4c83a3, lightblue);
+    color: var(--bs-white);
 }
 
 .container {
@@ -32,10 +31,18 @@ body {
     width: 100%;
 }
 
+a {
+    text-decoration: none; 
+    color: inherit;
+}
+
 /* Sección del menú */
 .menu {
-    background-color: #a1d6c7;
-    width: 20%;
+    background: url("../assets/img/fondolateral2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 500px;
     padding: 15px;
     box-sizing: border-box;
     border-right: 1px solid var(--bs-gray);
@@ -45,6 +52,7 @@ body {
     left: auto;
     z-index: 1;
     text-align: center;
+    height: 100vh;
 }
 
 #imagenPerfil {
@@ -72,18 +80,12 @@ body {
 
 .menu ul li {
     height: 40px;
-    border-top: 1px solid var(--bs-gray);
-    border-bottom: 1px solid var(--bs-gray);
     margin-bottom: 10px;
     text-align: center;
 }
 
 .menu ul li:has(button) {
     border: none;
-}
-
-.menu ul li:hover {
-    background-color: var(--bs-teal); 
 }
 
 .menu ul li a {
@@ -99,17 +101,18 @@ body {
     z-index: 1001;
     padding: 10px;
     font-size: 18px;
-    background-color: var(--bs-primary); /* Color de fondo para el botón flotante */
-    color: var(--bs-white); /* Texto en blanco para el botón flotante */
+    background-color: var(--bs-primary); 
+    color: var(--bs-white); 
 }
 
 /* Sección de contenido */
+
 .content {
     flex-grow: 1;
     padding: 15px;
     box-sizing: border-box;
-    background-color: #c1f0f7;
     color: var(--bs-black);
+    background: url("../assets/img/fondoproyectos1.png");
 }
 
 .content h2 {
@@ -124,12 +127,25 @@ body {
 /* Sección de noticias */
 .news {
     color: var(--bs-dark);
-    background-color: #e0fff6; /* Fondo claro para las noticias */
+    background: url("../assets/img/fondolateral2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-left: 1px solid var(--bs-gray);
-    width: 20%;
-    padding: 15px;
+    width: 30%;
+    padding: 20px;
     box-sizing: border-box;
-    display: block; /* Mostrar por defecto */
+    display: block;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.news .colaboraciones {
+    padding-bottom: 10px;
+}
+
+#botonNotificaciones {
+    display: none;
 }
 
 /* Estilos para pantallas pequeñas */
@@ -146,15 +162,15 @@ body {
     .menu {
         border: 1px solid var(--bs-gray);
         width: 80%;
-        display: none; /* Ocultar por defecto */
-        position: absolute; /* Flotar en la parte superior izquierda */
+        display: none; 
+        position: absolute; 
         top: 50px;
         left: 0;
         z-index: 1000;
     }
 
     .menu.show-menu {
-        display: block; /* Mostrar el menú cuando la clase está presente */
+        display: block; 
     }
 
     .floating-button {
@@ -163,6 +179,10 @@ body {
 
     .news {
         display: none;
+    }
+    
+    #botonNotificaciones {
+        display: block;
     }
 
     .content {
@@ -185,13 +205,29 @@ body {
 
 .colaboracion {
     margin-top: 20px;
-    background-color: #fcf5b5; 
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: start; 
     justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.colaboracion a {
+    padding-top: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center; 
+    color: #cbe2ef;
+}
+
+.colaboracion a:before {
+    content: "\f0f3"; 
+    font-family: "Font Awesome 5 Free"; 
+    padding-right: 5px; 
 }
 
 .info-container {
@@ -234,6 +270,23 @@ body {
 .author {
     color: var(--bs-gray-dark);
     font-style: italic;
+}
+
+.navButton {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--bs-white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.navButton:hover {
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .logout-button {

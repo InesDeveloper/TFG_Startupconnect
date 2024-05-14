@@ -63,7 +63,7 @@
             <input type="tel" name="telefono" required><br>
    
             <p><?php echo $translations['crear_cuenta_privacidad']; ?></p>
-            <input type="submit" value="Aceptar y unirse">
+            <input type="submit" value="<?php echo $translations["crear_cuenta_boton"]; ?>">
         </form>
         
         <form id="empresaForm" action="registrarEmpresa.php" method="POST" style="display: none;">
@@ -82,7 +82,7 @@
             <input type="tel" name="telefono" required><br>
    
             <p><?php echo $translations['crear_cuenta_privacidad']; ?></p>
-            <input type="submit" value="Aceptar y unirse">
+            <input type="submit" value="<?php echo $translations["crear_cuenta_boton"]; ?>">
         </form>
     </body>
 </html>

@@ -42,8 +42,7 @@ if(isset($_SESSION["idUsuario"]) &&
     
 } else {
     echo $translations['dashboard_empresa_sin_login'];
-    echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';
-    
+    echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';   
 }
 
 ?>

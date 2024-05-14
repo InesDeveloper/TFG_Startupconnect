@@ -14,23 +14,21 @@
     </script>
     <style>
         body {
-            height: 120vh;
-            background: white;
+            background: url("../assets/img/fondoproyectos1.png") !important;
         }
         
         .content {
-            background: var(--bs-white); /* Utiliza el color de fondo definido en el CSS */
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 50px;
             margin: auto;
             margin-top: 50px;
-            width: 80%; /* Ancho ajustado para que sea responsive */
-            max-width: 400px; /* Ancho máximo para evitar que el formulario se extienda demasiado en pantallas grandes */
+            width: 80%;
+            max-width: 400px;
             border-radius: 10px;
         }
         
-
-        /* Estilos para los inputs */
         input {
             padding: 10px;
             width: 100%;
@@ -40,7 +38,6 @@
             border: none;
         }
 
-        /* Estilos para el botón */
         input[type="submit"] {
             background: #64a19d; 
             color: var(--bs-white);

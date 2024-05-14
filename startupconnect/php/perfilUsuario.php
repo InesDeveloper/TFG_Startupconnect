@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../css/dashboard.css">
     <style>
         body {
-            height: 250vh;
+            /*height: 250vh;*/
         }
         
         h2 {
@@ -117,7 +117,6 @@
             ';
      
             echo '</main>';
-            //include 'bandejadeEntrada.php';
         }
     ?>
 </body>

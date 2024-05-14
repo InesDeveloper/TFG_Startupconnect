@@ -19,10 +19,12 @@ echo '
                 <p>'.$nombre.'</p>
             </div>
             <ul>
-                <li><a href="dashboardEmpresas.php">'.$translations['navigation_menu_proyectos'].'</a></li>
-                <li><a href="colaboraciones.php">'.$translations['navigation_menu_colaboraciones'].'</a></li>
-                <li><a href="descartados.php">'.$translations['navigation_menu_descartados'].'</a></li>
-                <li><a href="contacto.php">'.$translations['navigation_menu_soporte'].'</a></li>
+                <li><button class="navButton" onclick="location.href=\'dashboardEmpresas.php\'">'.$translations['navigation_menu_proyectos'].'</button></li>
+                <li><button class="navButton" onclick="location.href=\'colaboraciones.php\'">'.$translations['navigation_menu_colaboraciones'].'</button></li>
+                <li><button class="navButton" onclick="location.href=\'descartados.php\'">'.$translations['navigation_menu_descartados'].'</button></li>
+                <li><button class="navButton" onclick="location.href=\'contacto.php\'">'.$translations['navigation_menu_soporte'].'</button></li>
+                <li><button class="navButton" onclick="location.href=\'asistenteVirtual.php\'">'.$translations['navigation_asistente'].'</button></li>
+                <li id="botonNotificaciones"><button class="navButton" onclick="location.href=\'notificaciones.php\'">'.$translations['seccion_noticias_titulo'].'</button></li>
                 <li><button class="logout-button" onclick="location.href=\'logout.php\'">'.$translations['navigation_menu_cerrar_sesion'].'</button></li>
             </ul>
             <img id="logo" src="../assets/img/LogoSConnect.png">

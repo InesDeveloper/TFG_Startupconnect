@@ -1,9 +1,9 @@
 <?php
 
 function getGPTResponse($prompt) {
-    $apiKey = "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";
+    $apiKey = "sk-proj-KBWf2jmAK0rYFc4W6iXvT3BlbkFJMvbqnXMJTJleiRcGr9gy";
     $url = 'https://api.openai.com/v1/chat/completions'; 
-    $orgID = 'org-cM1pghsQGFeuIKN7eEJ0LniH';
+    $orgID = 'org-8i39aebGBBwH6EpCTRCWbRnI';
     
     $headers = array(
         "Authorization: Bearer {$apiKey}",
@@ -22,7 +22,7 @@ function getGPTResponse($prompt) {
     $data = array();
     $data["model"] = "gpt-3.5-turbo";
     $data["messages"] = $messages;
-    $data["max_tokens"] = 4000;
+    $data["max_tokens"] = 100;
     
     // init curl
     $curl = curl_init($url);

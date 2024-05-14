@@ -20,6 +20,7 @@ $translations = array(
     "crear_cuenta_dni" => "DNI/NIF",
     "crear_cuenta_cif" => "CIF",
     "crear_cuenta_privacidad" => "Al hacer clic en «Aceptar y unirse», aceptas las Condiciones de uso, la Política de privacidad y la Política de cookies de StartupConnect 2024 ©",
+    "crear_cuenta_boton" => "Aceptar y unirse",
     "login_cargando_usuario" => "Cargando perfil de usuario",
     "login_cargando_empresa" => "Cargando perfil de empresa",
     "login_no_usuario" => "No se ha encontrado ningún perfil con ese email.",
@@ -108,5 +109,10 @@ $translations = array(
     "contacto_titulo" => "Centro de ayuda",
     "navigation_menu_soporte" => "Soporte",
     "contacto_mensaje" => "Mensaje",
+    "navigation_asistente" => "Asistente virtual",
+    "formulario_asistente_titulo" => "Consulta a nuestro asistente virtual:",
+    "formulario_asistente_boton" => "Obtener respuesta",
+    "asistente_campo_respuesta" => "Aqui aparecerá tu respuesta",
+    "formulario_enviar" => "Enviar",
 );
 ?>

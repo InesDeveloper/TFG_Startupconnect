@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 12-05-2024 a las 13:13:55
+-- Tiempo de generación: 14-05-2024 a las 20:53:57
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -41,7 +41,8 @@ CREATE TABLE `Colaboraciones` (
 
 INSERT INTO `Colaboraciones` (`Identificador`, `fk_Proyecto`, `fk_Empresa`, `fechaRegistro`, `contactado`) VALUES
 (1, 1, 1, '2024-05-02 11:16:59', 1),
-(2, 4, 1, '2024-05-12 10:42:51', 0);
+(2, 4, 1, '2024-05-12 10:42:51', 0),
+(3, 9, 1, '2024-05-14 09:35:35', 0);
 
 -- --------------------------------------------------------
 
@@ -62,8 +63,7 @@ CREATE TABLE `Descartes` (
 --
 
 INSERT INTO `Descartes` (`Identificador`, `fk_Proyecto`, `fk_Empresa`, `Motivo`, `fechaRegistro`) VALUES
-(1, 2, 1, 'Odio las criptomonedas', '2024-05-04 11:18:02'),
-(2, 14, 1, 'No me gusta', '2024-05-12 10:45:18');
+(1, 2, 1, 'Odio las criptomonedas', '2024-05-04 11:18:02');
 
 -- --------------------------------------------------------
 
@@ -119,19 +119,19 @@ CREATE TABLE `Proyectos` (
 --
 
 INSERT INTO `Proyectos` (`Identificador`, `fk_Usuarios`, `Nombre`, `Descripcion`, `urlVideo`, `fk_sector`) VALUES
-(1, 2, 'Growntown Garden', 'Fomento de la biodiversidad\r\nAl cultivar plantas y flores en un huerto urbano, se puede crear un hábitat para una variedad de especies de insectos y animales, lo que contribuye a la biodiversidad local.', '', 4),
-(2, 5, 'Criptomoneda QuantumCoin', 'Se basa en una red blockchain avanzada que utiliza un protocolo cuántico resistente a ataques, garantizando una seguridad de última generación contra las amenazas emergentes de la computación cuántica.', '', 2),
-(3, 3, 'Filtro de agua con nanorobots', 'Es un dispositivo altamente avanzado de purificación de agua que utiliza tecnología de nanorobots. Son extremadamente pequeños, diseñados para moverse a través del agua y eliminar contaminantes a nivel molecular.', '', 4),
-(4, 4, 'Fitness Gamificado', 'Combina tecnología de realidad aumentada (AR) con entrenamiento físico para crear una experiencia de ejercicio inmersiva y motivadora.', '', 1),
-(5, 2, 'Rastreo de Huella de Carbono en Tiempo Real', 'Tecnología avanzada para monitorear y gestionar las emisiones de carbono de individuos y empresas. ', '', 4),
-(6, 3, 'Teleconsulta Virtual Interactiva', 'La plataforma permitiría a los pacientes interactuar con médicos y especialistas en un entorno virtual tridimensional, simulando una visita presencial en un consultorio.', '', 1),
-(7, 4, 'Gestión Inteligente del Hogar', 'Solución integral para automatizar y optimizar los sistemas de gestión del hogar a través de dispositivos IoT conectados, utilizando inteligencia artificial para mejorar la eficiencia energética, la seguridad y la comodidad.', '', 2),
-(8, 6, 'Mercado Local en Línea', 'Facilita la compra y venta de productos alimenticios y artesanales directamente de productores locales a consumidores en la misma región, fomentando el comercio local y sostenible.', '', 8),
-(9, 8, 'Aprendizaje Basado en Proyectos Virtuales', 'Conectar a estudiantes de todo el mundo para trabajar juntos en proyectos multidisciplinarios guiados por expertos.', '', 5),
-(10, 9, 'Transporte Compartido para Viajes Largos', 'Facilitar el carpooling o compartir vehículo en rutas largas, haciendo los viajes más económicos y sostenibles.', '', 6),
-(11, 10, 'Optimización de Logística de Última Milla', 'Se utilizan tecnología avanzada para gestionar y optimizar las rutas de entrega, coordinar con varios proveedores de transporte y ofrecer soluciones innovadoras para los desafíos logísticos de la última milla.', '', 6),
-(12, 7, 'Comunicaciones Unificadas ', 'Soluciones integrales de comunicación y colaboración basadas en la nube que integran voz, video, mensajería, conferencias y compartición de archivos, todo en una sola plataforma accesible desde cualquier dispositivo', '', 9),
-(14, 1, 'Test', 'test', 'https://youtu.be/g4HLJPSyJq8?si=DbCZ9J16nJqJvP-j', 5);
+(1, 2, 'Growntown Garden', 'Fomento de la biodiversidad\r\nAl cultivar plantas y flores en un huerto urbano, se puede crear un hábitat para una variedad de especies de insectos y animales, lo que contribuye a la biodiversidad local.', 'https://youtu.be/RAh0Sn8L79U', 4),
+(2, 5, 'Criptomoneda QuantumCoin', 'Se basa en una red blockchain avanzada que utiliza un protocolo cuántico resistente a ataques, garantizando una seguridad de última generación contra las amenazas emergentes de la computación cuántica.', 'https://youtu.be/O7-wd_R1Pbw', 2),
+(3, 3, 'Filtro de agua con nanorobots', 'Es un dispositivo altamente avanzado de purificación de agua que utiliza tecnología de nanorobots. Son extremadamente pequeños, diseñados para moverse a través del agua y eliminar contaminantes a nivel molecular.', 'https://youtu.be/j4QKSNAm6ew', 4),
+(4, 4, 'Fitness Gamificado', 'Combina tecnología de realidad aumentada (AR) con entrenamiento físico para crear una experiencia de ejercicio inmersiva y motivadora.', 'https://youtu.be/CcUZ7xvh_PM', 1),
+(5, 2, 'Rastreo de Huella de Carbono en Tiempo Real', 'Tecnología avanzada para monitorear y gestionar las emisiones de carbono de individuos y empresas. ', 'https://youtu.be/jCd2arVcnXc', 4),
+(6, 3, 'Teleconsulta Virtual Interactiva', 'La plataforma permitiría a los pacientes interactuar con médicos y especialistas en un entorno virtual tridimensional, simulando una visita presencial en un consultorio.', 'https://youtu.be/CC6wmeICZAE', 1),
+(7, 4, 'Gestión Inteligente del Hogar', 'Solución integral para automatizar y optimizar los sistemas de gestión del hogar a través de dispositivos IoT conectados, utilizando inteligencia artificial para mejorar la eficiencia energética, la seguridad y la comodidad.', 'https://youtu.be/7dAb1-wrTvQ', 2),
+(8, 6, 'Mercado Local en Línea', 'Facilita la compra y venta de productos alimenticios y artesanales directamente de productores locales a consumidores en la misma región, fomentando el comercio local y sostenible.', 'https://youtu.be/jCd2arVcnXc', 8),
+(9, 8, 'Aprendizaje Basado en Proyectos Virtuales', 'Conectar a estudiantes de todo el mundo para trabajar juntos en proyectos multidisciplinarios guiados por expertos.', 'https://youtu.be/9dl0pvFK8-k', 5),
+(10, 9, 'Transporte Compartido para Viajes Largos', 'Facilitar el carpooling o compartir vehículo en rutas largas, haciendo los viajes más económicos y sostenibles.', 'https://youtu.be/jCd2arVcnXc', 6),
+(11, 10, 'Optimización de Logística de Última Milla', 'Se utilizan tecnología avanzada para gestionar y optimizar las rutas de entrega, coordinar con varios proveedores de transporte y ofrecer soluciones innovadoras para los desafíos logísticos de la última milla.', 'https://youtu.be/jCd2arVcnXc', 6),
+(12, 7, 'Comunicaciones Unificadas ', 'Soluciones integrales de comunicación y colaboración basadas en la nube que integran voz, video, mensajería, conferencias y compartición de archivos, todo en una sola plataforma accesible desde cualquier dispositivo', 'https://youtu.be/ubmNuIl8hno', 9),
+(14, 1, 'Test', 'test', 'https://youtu.be/mEPPz19WcoE', 5);
 
 -- --------------------------------------------------------
 
@@ -182,7 +182,7 @@ CREATE TABLE `Usuarios` (
 --
 
 INSERT INTO `Usuarios` (`Identificador`, `Nombre`, `Apellido`, `DNI`, `Email`, `Direccion`, `Telefono`, `Contrasena`, `imagenPerfil`) VALUES
-(1, 'UsuarioT', 'ApellidoTest', '12345678T', 'test@test.com', 'Calle Test 123 Ciudad', '123456789', 'test', '../assets/img/perfiles/usuario/1.png'),
+(1, 'UsuarioTest', 'ApellidoTest', '12345678T', 'test@test.com', 'Calle Test 123 Ciudad', '123456789', 'test', '../assets/img/perfiles/usuario/1.png'),
 (2, 'Ines', 'Sánchez', '81269895Q', 'efreya_sanchez@hotmail.com', 'Calle Falsa 123', '687456312', 'ines', '../assets/img/perfiles/usuario/2.png'),
 (3, 'Marie ', 'Curie', '24950987N', 'MarieCurie@usuario.com', 'Enrique Granados, 6 28224 Pozuelo de Alarcón, Madrid', '654678888', 'mariecurie', '../assets/img/perfiles/usuario/3.png'),
 (4, 'Luis', 'Mileto', '96862357L', 'mileto@usuario.com', 'calle mileto 28, Valencia', '611266544', 'mileto', '../assets/img/perfiles/usuario/4.png'),
@@ -249,13 +249,13 @@ ALTER TABLE `Usuarios`
 -- AUTO_INCREMENT de la tabla `Colaboraciones`
 --
 ALTER TABLE `Colaboraciones`
-  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `Descartes`
 --
 ALTER TABLE `Descartes`
-  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `Empresas`

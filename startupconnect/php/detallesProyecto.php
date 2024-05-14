@@ -13,9 +13,6 @@
         });
     </script>
     <style>
-        body {
-            height: 120vh;
-        }
         
     /* Estilos para los formularios */
     .form-container {
@@ -29,17 +26,17 @@
 
     .form-container form {
         flex: 1;
-        min-width: 45%; /* Ajusta el ancho mínimo de los formularios */
+        min-width: 45%;
     }
 
     /* Estilos para pantallas pequeñas */
     @media (max-width: 768px) {
         .form-container {
-            flex-direction: column; /* Cambia a disposición vertical */
+            flex-direction: column;
         }
 
         .form-container form {
-            min-width: 100%; /* Formularios ocupan todo el ancho */
+            min-width: 100%;
         }
     }
     </style>
