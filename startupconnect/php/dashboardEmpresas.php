@@ -17,6 +17,10 @@
             });
         });
     </script>
+     <style> 
+        main h2 {color: black; text-align: center;}
+         form label {color: black;} 
+    </style>
 </head>
 <body>
     <?php

@@ -114,5 +114,7 @@ $translations = array(
     "formulario_asistente_boton" => "Obtener respuesta",
     "asistente_campo_respuesta" => "Aqui aparecerá tu respuesta",
     "formulario_enviar" => "Enviar",
+    "bandeja_entrada_usuario_colab" => "La empresa %s quiere colaborar con el proyecto %s. Pronto se pondrán en contacto.",
+    "bandeja_entrada_usuario_descarte" => "La empresa %s ha descartado el proyecto %s por el siguiente motivo: <br> %s",
 );
 ?>

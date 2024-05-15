@@ -12,6 +12,9 @@
             });
         });
     </script>
+     <style> 
+        main h2 {color: black; text-align: center;}
+    </style>
 </head>
 <body>
     <?php

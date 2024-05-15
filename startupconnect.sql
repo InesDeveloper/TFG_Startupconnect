@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 14-05-2024 a las 20:53:57
+-- Tiempo de generación: 15-05-2024 a las 20:35:13
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -63,7 +63,8 @@ CREATE TABLE `Descartes` (
 --
 
 INSERT INTO `Descartes` (`Identificador`, `fk_Proyecto`, `fk_Empresa`, `Motivo`, `fechaRegistro`) VALUES
-(1, 2, 1, 'Odio las criptomonedas', '2024-05-04 11:18:02');
+(1, 2, 1, 'Criptomoneda poco rentable.', '2024-05-04 11:18:02'),
+(2, 7, 8, 'Proyecto poco detallado', '2024-05-15 17:41:08');
 
 -- --------------------------------------------------------
 
@@ -127,11 +128,11 @@ INSERT INTO `Proyectos` (`Identificador`, `fk_Usuarios`, `Nombre`, `Descripcion`
 (6, 3, 'Teleconsulta Virtual Interactiva', 'La plataforma permitiría a los pacientes interactuar con médicos y especialistas en un entorno virtual tridimensional, simulando una visita presencial en un consultorio.', 'https://youtu.be/CC6wmeICZAE', 1),
 (7, 4, 'Gestión Inteligente del Hogar', 'Solución integral para automatizar y optimizar los sistemas de gestión del hogar a través de dispositivos IoT conectados, utilizando inteligencia artificial para mejorar la eficiencia energética, la seguridad y la comodidad.', 'https://youtu.be/7dAb1-wrTvQ', 2),
 (8, 6, 'Mercado Local en Línea', 'Facilita la compra y venta de productos alimenticios y artesanales directamente de productores locales a consumidores en la misma región, fomentando el comercio local y sostenible.', 'https://youtu.be/jCd2arVcnXc', 8),
-(9, 8, 'Aprendizaje Basado en Proyectos Virtuales', 'Conectar a estudiantes de todo el mundo para trabajar juntos en proyectos multidisciplinarios guiados por expertos.', 'https://youtu.be/9dl0pvFK8-k', 5),
+(9, 8, 'Proyectos Virtuales', 'Conectar a estudiantes de todo el mundo para trabajar juntos en proyectos multidisciplinarios guiados por expertos.', 'https://youtu.be/9dl0pvFK8-k', 5),
 (10, 9, 'Transporte Compartido para Viajes Largos', 'Facilitar el carpooling o compartir vehículo en rutas largas, haciendo los viajes más económicos y sostenibles.', 'https://youtu.be/jCd2arVcnXc', 6),
 (11, 10, 'Optimización de Logística de Última Milla', 'Se utilizan tecnología avanzada para gestionar y optimizar las rutas de entrega, coordinar con varios proveedores de transporte y ofrecer soluciones innovadoras para los desafíos logísticos de la última milla.', 'https://youtu.be/jCd2arVcnXc', 6),
 (12, 7, 'Comunicaciones Unificadas ', 'Soluciones integrales de comunicación y colaboración basadas en la nube que integran voz, video, mensajería, conferencias y compartición de archivos, todo en una sola plataforma accesible desde cualquier dispositivo', 'https://youtu.be/ubmNuIl8hno', 9),
-(14, 1, 'Test', 'test', 'https://youtu.be/mEPPz19WcoE', 5);
+(14, 1, 'Test test Test test', 'test Test test Test test Test test Test test Test test Test test Test test Test test', 'https://youtu.be/mEPPz19WcoE', 5);
 
 -- --------------------------------------------------------
 
@@ -255,7 +256,7 @@ ALTER TABLE `Colaboraciones`
 -- AUTO_INCREMENT de la tabla `Descartes`
 --
 ALTER TABLE `Descartes`
-  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Identificador` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `Empresas`

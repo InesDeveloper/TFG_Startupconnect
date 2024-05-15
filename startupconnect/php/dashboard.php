@@ -12,6 +12,9 @@
             });
         });
     </script>
+    <style> 
+        main h2 {color: black; text-align: center;}
+    </style>
 </head>
 <body>
     <?php
@@ -74,11 +77,11 @@
                 }
             }
     
-            
             echo '
                     </div>
                 </main>
             ';
+            include 'bandejadeEntrada.php';
         }
     ?>
 </body>

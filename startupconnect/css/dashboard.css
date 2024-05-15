@@ -112,7 +112,7 @@ a {
     padding: 15px;
     box-sizing: border-box;
     color: var(--bs-black);
-    background: url("../assets/img/fondoproyectos1.png");
+    background: url("../assets/img/fondo.png");
 }
 
 .content h2 {
@@ -192,7 +192,8 @@ a {
 
 .article {
     margin-top: 20px;
-    background-color: #bbe2f8; 
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -260,6 +261,8 @@ a {
 
 .title {
     font-size: 1.5em;
+    color: white;
+    text-align: left;
     margin: 0 0 10px 0;
 }
 
@@ -268,7 +271,7 @@ a {
 }
 
 .author {
-    color: var(--bs-gray-dark);
+    color: white;
     font-style: italic;
 }
 

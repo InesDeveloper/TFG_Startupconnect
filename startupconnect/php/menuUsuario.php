@@ -19,6 +19,7 @@ echo '
                 <li><button class="navButton" onclick="location.href=\'formularioProyecto.php\'">'.$translations['navigation_menu_nuevo_proyecto'].'</button></li>
                 <li><button class="navButton" onclick="location.href=\'contacto.php\'">'.$translations['navigation_menu_soporte'].'</button></li>
                 <li><button class="navButton" onclick="location.href=\'asistenteVirtual.php\'">'.$translations['navigation_asistente'].'</button></li>
+                <li id="botonNotificaciones"><button class="navButton" onclick="location.href=\'notificaciones.php\'">'.$translations['seccion_noticias_titulo'].'</button></li>
                 <li><button class="logout-button" onclick="location.href=\'logout.php\'">'.$translations['navigation_menu_cerrar_sesion'].'</button></li>
             </ul>
             <img id="logo" src="../assets/img/LogoSConnect.png">
