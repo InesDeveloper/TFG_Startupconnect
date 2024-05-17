@@ -22,11 +22,16 @@
         gap: 20px;
         justify-content: space-between;
         padding-bottom: 200px;
+        
     }
 
     .form-container form {
         flex: 1;
         min-width: 45%;
+        background: rgba(0,0,0,0.4);
+        color: white;
+        border-radius: 20px;
+        padding: 20px;
     }
 
     /* Estilos para pantallas pequeñas */

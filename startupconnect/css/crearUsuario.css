@@ -18,7 +18,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: var(--bs-black); /* Utiliza el color de fondo definido en el CSS */
+    background: var(--bs-black); 
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/imagen1.jpg");
     color: var(--bs-teal);
 }
@@ -33,12 +33,12 @@ body {
 }
 
 form {
-    background: var(--bs-gray); /* Utiliza el color de fondo definido en el CSS */
+    background: var(--bs-gray); 
     padding: 50px;
     margin: auto;
     margin-top: 100px;
-    width: 90%; /* Ancho ajustado para que sea responsive */
-    max-width: 400px; /* Ancho máximo para evitar que el formulario se extienda demasiado en pantallas grandes */
+    width: 90%; 
+    max-width: 400px; 
     border-radius: 10px;
 }
 
@@ -62,17 +62,17 @@ input[type="submit"] {
 
 /* Estilos para los enlaces */
 a {
-    color: var(--bs-primary); /* Utiliza el color de enlace definido en el CSS */
+    color: var(--bs-primary); 
 }
 
 /* Estilos para los mensajes de términos y condiciones */
 p {
     font-size: 0.8rem;
-    color: var(--bs-teal); /* Utiliza el color de texto definido en el CSS */
+    color: var(--bs-teal); 
 }
 
 /* Estilos para el título */
 h3 {
-    color: var(--bs-white); /* Utiliza el color de texto definido en el CSS */
+    color: var(--bs-white); 
     margin-top: 0;
 }

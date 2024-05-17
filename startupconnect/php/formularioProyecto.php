@@ -13,6 +13,14 @@
         });
     </script>
     <style>
+        body {
+            height: 100vh !important;
+        }
+        
+        .menu {
+            width: 300px !important;
+        }
+        
         h2 {
             text-align: center;
             color:black;
@@ -101,7 +109,6 @@
                     </form>
                 </main>
             ';
-            //include 'bandejadeEntrada.php';
         }
     ?>
 </body>

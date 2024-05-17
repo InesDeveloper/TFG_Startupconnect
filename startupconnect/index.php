@@ -10,7 +10,12 @@
     </head>
     <body id="page-top">
         <?php
+            if(isset($_SESSION["idUsuario"]) || isset($_SESSION["idEmpresa"])) {
+                session_unset();
+                session_destroy();
+            }
             session_start();
+
             
             if (!isset($_SESSION['language'])) {
                 $_SESSION['language'] = 'es';

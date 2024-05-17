@@ -5,12 +5,17 @@
     <link rel="stylesheet" href="../css/dashboard.css">
     <style>
         
+        .content {
+            height: 200vh !important;
+        }
+        
         h2 {
             text-align: center;
         }
         
         form {
-            background: var(--bs-gray);
+            color: white;
+            background: rgba(0,0,0,0.4);
             padding: 50px;
             margin: auto;
             margin-top: 50px;

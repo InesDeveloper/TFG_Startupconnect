@@ -13,12 +13,12 @@
         }
         
         form {
-            background: var(--bs-gray); /* Utiliza el color de fondo definido en el CSS */
+            background: rgba(0,0,0,0.3);
             padding: 50px;
             margin: auto;
             margin-top: 50px;
-            width: 80%; /* Ancho ajustado para que sea responsive */
-            max-width: 400px; /* Ancho máximo para evitar que el formulario se extienda demasiado en pantallas grandes */
+            width: 80%; 
+            max-width: 400px; 
             border-radius: 10px;
         }
 

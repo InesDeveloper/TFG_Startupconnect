@@ -16,7 +16,7 @@
         .content {
             color: white;
             width: 100% !important;
-            background: url("../assets/img/fondoproyectos1.png") !important;
+            background: url("../assets/img/fondo.png") !important;
         }
         
         h2 {
@@ -44,14 +44,11 @@
         }
     
         require_once('../lenguajes/' . $_SESSION['language'] . '.php');
+        $controlador = new ControladorBD();
     
-        if(!isset($_SESSION["idEmpresa"]) && // Si existe sesion de empresa para aportar seguridad
-           !isset($_SESSION["nombreEmpresa"])) {
+        if(isset($_SESSION["idEmpresa"]) && // Si existe sesion de empresa para aportar seguridad
+           isset($_SESSION["nombreEmpresa"])) {
             
-                echo $translations['dashboard_empresa_sin_login'];
-                echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';   
-            
-        } else {
             include 'menuEmpresa.php';
             
             echo '
@@ -60,7 +57,6 @@
                     <div class="articles">
                 ';
             
-            $controlador = new ControladorBD();
             $consultaColaboraciones = "
             SELECT p.nombre, c.Identificador 
             FROM Colaboraciones c JOIN Proyectos p 
@@ -82,6 +78,81 @@
             echo '  </div>
                 </main>
             ';
+            
+        } else if(isset($_SESSION["idUsuario"]) &&
+                isset($_SESSION["nombreUsuario"])) { 
+            
+            include 'menuUsuario.php';
+            
+            echo '
+                <main class="content">
+                    <h2>'.$translations['seccion_noticias_titulo'].'</h2>
+                    <div class="articles">
+                ';
+            
+            $consultaColaboraciones = "
+            SELECT
+                p.Nombre AS NombreProyecto,
+                e.Nombre AS NombreEmpresa
+            FROM
+                Colaboraciones c
+            JOIN
+                Proyectos p ON c.fk_Proyecto = p.Identificador
+            JOIN
+                Empresas e ON c.fk_Empresa = e.Identificador
+            WHERE
+                p.fk_Usuarios = ".$_SESSION["idUsuario"]." AND c.contactado = 0
+            ORDER BY
+                c.fechaRegistro DESC
+            LIMIT 5;";
+
+            $resultadoColaboraciones = $controlador->consulta($consultaColaboraciones);
+
+            $consultaDescartados = "
+                SELECT
+                    p.Nombre AS NombreProyecto,
+                    e.Nombre AS NombreEmpresa,
+                    d.Motivo AS motivo
+                FROM
+                    Descartes d
+                JOIN
+                    Proyectos p ON d.fk_Proyecto = p.Identificador
+                JOIN
+                    Empresas e ON d.fk_Empresa = e.Identificador
+                WHERE
+                    p.fk_Usuarios = ".$_SESSION["idUsuario"]." 
+                ORDER BY
+                    d.fechaRegistro DESC
+                LIMIT 5;";
+
+            $resultadoDescartes = $controlador->consulta($consultaDescartados);
+            
+            if(is_array($resultadoColaboraciones) && count($resultadoColaboraciones) > 0) {
+                foreach ($resultadoColaboraciones as $colaboracion) {
+                    echo '<div class="colaboracion">'.sprintf($translations['bandeja_entrada_usuario_colab'], $colaboracion['NombreEmpresa'], $colaboracion['NombreProyecto']).'</div>';
+                }
+            }
+
+            if (is_array($resultadoDescartes) && count($resultadoDescartes) > 0) {
+                echo '<hr>';
+                foreach ($resultadoDescartes as $descarte) {
+                    echo '<div class="colaboracion">'.sprintf($translations['bandeja_entrada_usuario_descarte'], $descarte['NombreEmpresa'], $descarte['NombreProyecto'], $descarte['motivo']).'</div>';
+                }
+            }
+
+            if ((is_array($resultadoDescartes) && count($resultadoDescartes) == 0) && (is_array($resultadoColaboraciones) && count($resultadoColaboraciones) == 0)) {
+                echo '<h4>'.$translations['bandeja_entrada_proyectos_vacios'].'</h4>';
+            }
+            
+            echo '  </div>
+                </main>
+            ';
+            
+        } else {
+            
+            echo $translations['dashboard_empresa_sin_login'];
+            echo '<meta http-equiv="Refresh" content="2; url=../index.php" /> ';  
+             
         }
     ?>
 </body>

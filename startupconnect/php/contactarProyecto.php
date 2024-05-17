@@ -14,7 +14,7 @@
     </script>
     <style>
         body {
-            background: url("../assets/img/fondoproyectos1.png") !important;
+            background: url("../assets/img/fondo.png") !important;
         }
         
         .content {
